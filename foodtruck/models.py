@@ -3,6 +3,9 @@ from sqlalchemy import (
     Index,
     Integer,
     Text,
+    Unicode,
+    Time,
+    ForeignKey,
     )
 
 from sqlalchemy.ext.declarative import declarative_base
@@ -10,6 +13,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import (
     scoped_session,
     sessionmaker,
+    relationship,
     )
 
 from zope.sqlalchemy import ZopeTransactionExtension
@@ -18,10 +22,25 @@ DBSession = scoped_session(sessionmaker(extension=ZopeTransactionExtension()))
 Base = declarative_base()
 
 
-class MyModel(Base):
-    __tablename__ = 'models'
+class Truck(Base):
+    __tablename__ = 'trucks'
     id = Column(Integer, primary_key=True)
-    name = Column(Text)
-    value = Column(Integer)
+    name = Column(Text, nullable=False)
+    location = relationship('Locations')
+    food_type = Column(Text)
+    payment = Column(Text)
+    twitter = Column(Text)
+    website = Column(Text)
 
-Index('my_index', MyModel.name, unique=True, mysql_length=255)
+
+class Locations(Base):
+    __tablename__ = 'locations'
+    id = Column(Integer, primary_key=True)
+    truck_id = Column(Integer, ForeignKey('trucks.id'))
+    day = Column(Text)
+    start_time = Column(Time)
+    end_time = Column(Time)
+    address = Column(Text)
+
+
+Index('truck_index', Truck.name, unique=True, mysql_length=255)
