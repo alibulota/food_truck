@@ -1,0 +1,45 @@
+{% extends 'base.jinja2 %}
+
+{% block nav%}
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="#">The Tructionary</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Search by Neighborhood <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">SLU</a></li>
+                <li><a href="#">Downtown</a></li>
+                <li><a href="#">Ballard</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Search by Cuisine <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">American</a></li>
+                <li><a href="#">Asian</a></li>
+                <li><a href="#">BBQ</a></li>
+                <li><a href="#">International</a></li>
+                <li><a href="#">Mediterranean</a></li>
+                <li><a href="#">Mexican</a></li>
+                <li><a href="#">Sweets</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+{% endblock %}
+
+
+{% block body %}
+    <div class="container theme-showcase" role="main">
+      <div class="jumbotron">
+        <h1>Hungry? Looking for a Food Truck?</h1>
+        <p>At dine-o-truck, we just want to help hungry people put food in their bellies! Now here's a picture of a dino:</p>
+        <img src="../static/img/dinotruck.png" alt="the dine-o-truck dino!">
+      </div>
+      <div class="page-header">
+        <h1>Fancy Post here</h1>
+        <p>This is some example fancy post. It has fancy things in it. It uses fancy words. Because we're fancy.</p>
+      </div>
+    </div> <!-- /container -->
+{% endblock %}
