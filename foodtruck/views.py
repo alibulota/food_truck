@@ -27,31 +27,16 @@ def tructionary(request):
     return {'': ''}
 
 
-@view_config(route_name='slu', renderer='templates/neighborhood.jinja2')
-def slu(request):
-    try:
-        pass
-    except DBAPIError:
-        return Response(conn_err_msg, content_type='text/plain', status_int=500)
-    return {'neighborhood': 'SLU goes here'}
+@view_config(route_name='neighborhood', renderer='templates/neighborhood.jinja2')
+def neighborhood(request):
+    neighborhood = request.matchdict.get('neighborhood', None)
+    return {'neighborhood': neighborhood}
 
 
-@view_config(route_name='downtown', renderer='templates/neighborhood.jinja2')
-def downtown(request):
-    try:
-        pass
-    except DBAPIError:
-        return Response(conn_err_msg, content_type='text/plain', status_int=500)
-    return {'neighborhood': 'Downtown goes here'}
-
-
-@view_config(route_name='ballard', renderer='templates/neighborhood.jinja2')
-def ballard(request):
-    try:
-        pass
-    except DBAPIError:
-        return Response(conn_err_msg, content_type='text/plain', status_int=500)
-    return {'neighborhood': 'Ballard goes here'}
+@view_config(route_name='cuisine', renderer='templates/cuisine.jinja2')
+def cuisine(request):
+    cuisine = request.matchdict.get('cuisine', None)
+    return {'cuisine': cuisine}
 
 
 conn_err_msg = """\
