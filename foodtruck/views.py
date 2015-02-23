@@ -9,14 +9,49 @@ from .models import (
     )
 
 
-@view_config(route_name='home', renderer='templates/mytemplate.jinja2')
-def my_view(request):
+@view_config(route_name='home', renderer='templates/index.jinja2')
+def index(request):
     try:
         pass
-        # one = DBSession.query(Truck).filter(Truck.name).first()
     except DBAPIError:
         return Response(conn_err_msg, content_type='text/plain', status_int=500)
-    return {'one': 'one', 'project': 'FoodTruck'}
+    return {'': ''}
+
+
+@view_config(route_name='trucks', renderer='templates/tructionary.jinja2')
+def tructionary(request):
+    try:
+        pass
+    except DBAPIError:
+        return Response(conn_err_msg, content_type='text/plain', status_int=500)
+    return {'': ''}
+
+
+@view_config(route_name='slu', renderer='templates/neighborhood.jinja2')
+def slu(request):
+    try:
+        pass
+    except DBAPIError:
+        return Response(conn_err_msg, content_type='text/plain', status_int=500)
+    return {'neighborhood': 'SLU goes here'}
+
+
+@view_config(route_name='downtown', renderer='templates/neighborhood.jinja2')
+def downtown(request):
+    try:
+        pass
+    except DBAPIError:
+        return Response(conn_err_msg, content_type='text/plain', status_int=500)
+    return {'neighborhood': 'Downtown goes here'}
+
+
+@view_config(route_name='ballard', renderer='templates/neighborhood.jinja2')
+def ballard(request):
+    try:
+        pass
+    except DBAPIError:
+        return Response(conn_err_msg, content_type='text/plain', status_int=500)
+    return {'neighborhood': 'Ballard goes here'}
 
 
 conn_err_msg = """\
@@ -34,4 +69,3 @@ might be caused by one of the following things:
 After you fix the problem, please restart the Pyramid application to
 try it again.
 """
-
