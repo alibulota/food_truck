@@ -41,8 +41,8 @@
         <h1>The Trucks</h1>
         <ul class="tructionary">
         {% for truck in trucks %}
-          <a href="/tructionary/{{truck.name}}">
-          <li><small>ID: {{ truck.id }}</small> | Name: {{ truck.name }} | <small>Cuisine: {{ truck.food_type }}</small></li>
+          <a href="/tructionary/{{ truck.id }}">
+          <li><small>ID: {{ truck.id }}</small> | Name: {{ truck.name }} | <small>Cuisine: {{ truck.cuisine }}</small></li>
           </a>
         {% endfor %}
         </ul>
