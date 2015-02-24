@@ -44,6 +44,10 @@
       <div class="container">
         <footer>
           <hr class="footer-hr">
+          {% if request.authenticated_userid %}
+          <h2>You are logged in</h2>
+          <a href="{{ request.route_url('logout') }}">Log Me Out</a>
+          {% endif %}
           <p>Made for hungry people.</p>
         </footer>
       </div>

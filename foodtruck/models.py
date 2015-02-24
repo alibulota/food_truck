@@ -32,6 +32,10 @@ class Truck(Base):
     twitter = Column(Text)
     website = Column(Text)
 
+    @classmethod
+    def all(cls):
+        return DBSession.query(cls).order_by(cls.name).all()
+
 
 class Locations(Base):
     __tablename__ = 'locations'

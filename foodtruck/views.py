@@ -13,19 +13,19 @@ from .models import (
 @view_config(route_name='home', renderer='templates/index.jinja2')
 def index(request):
     try:
-        pass
+        trucks = Truck.all()
     except DBAPIError:
         return Response(conn_err_msg, content_type='text/plain', status_int=500)
-    return {'': ''}
+    return {'trucks': trucks}
 
 
 @view_config(route_name='trucks', renderer='templates/tructionary.jinja2')
 def tructionary(request):
     try:
-        pass
+        trucks = Truck.all()
     except DBAPIError:
         return Response(conn_err_msg, content_type='text/plain', status_int=500)
-    return {'': ''}
+    return {'trucks': trucks}
 
 
 @view_config(route_name='neighborhood', renderer='templates/neighborhood.jinja2')
