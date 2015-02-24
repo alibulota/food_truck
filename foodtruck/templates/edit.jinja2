@@ -59,5 +59,15 @@
         <input type="submit" name="add" value="Update It!"/>
       </div>
     </form>
+    </br>
+    <h4>Neighborhoods for {{ truck.name }}:</h4>
+    <ul>
+    {% for neighborhood in truck.location %}
+      <li>{{ neighborhood }}</li>
+    {% else %}
+    <p><em>No locations in database</em></p>
+    {% endfor %}
+    </ul>
+
   <div>
 {% endblock %}

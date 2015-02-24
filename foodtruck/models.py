@@ -58,6 +58,13 @@ class Locations(Base):
     start_time = Column(Time)
     end_time = Column(Time)
     address = Column(Text)
+    neighborhood = Column(Text)
+
+    def __str__(self):
+        return self.neighborhood
+
+    def __repr__(self):
+        return self.neighborhood
 
 
 Index('truck_index', Truck.name, unique=True, mysql_length=255)
