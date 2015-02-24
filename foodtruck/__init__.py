@@ -24,7 +24,6 @@ def main(global_config, **settings):
     config.add_route('truck_detail', '/tructionary/{name}')
     config.add_route('neighborhood', '/neighborhood/{neighborhood}')
     config.add_route('cuisine', '/cuisine/{cuisine}')
-    
     # ADMIN #
     config.add_route('login', '/login')
     config.add_route('logout', '/logout')
