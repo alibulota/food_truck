@@ -55,7 +55,7 @@
         <input type="text" name="website" id="website"/>
       </div>
       <div>
-        <input type="submit" name="add" value="Add Truck"/>
+        <input type="submit" name="add" value="Truck It!"/>
       </div>
     </form>
   <div>
@@ -64,9 +64,9 @@
     <h1>The Trucks</h1>
     <ul class="tructionary">
     {% for truck in trucks %}
-      <a href="/tructionary/{{truck.name}}">
-      <li><small>ID: {{ truck.id }}</small> | Name: {{ truck.name }} | <small>Cuisine: {{ truck.food_type }}</small></li>
-      </a>
+      <li><a href="/tructionary/{{truck.name|urlize(40)}}">
+      <small>ID: {{ truck.id }}</small> | Name: {{ truck.name }} | <small>Cuisine: {{ truck.food_type }}</small>
+      </li></a>
     {% endfor %}
     </ul>
   </div>

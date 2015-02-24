@@ -88,6 +88,7 @@ def add_truck(request):
     if request.authenticated_userid:
         try:
             Truck.add_truck(request)
+            return HTTPFound(request.route_url('admin'))
         except DBAPIError:
             return HTTPInternalServerError
     else:
