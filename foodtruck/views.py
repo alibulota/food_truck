@@ -107,6 +107,20 @@ def admin(request):
         return HTTPForbidden()
 
 
+@view_config(route_name='edit', renderer='templates/edit.jinja2')
+def edit(request):
+    if request.authenticated_userid:
+        try:
+            import pdb; pdb.set_trace()
+            id = request.matchdict.get('id', None)
+            truck = Truck.by_id(id)
+        except DBAPIError:
+            return HTTPInternalServerError
+        return {'truck': truck}
+    else:
+        return HTTPForbidden()
+
+
 conn_err_msg = """\
 Pyramid is having a problem using your SQL database.  The problem
 might be caused by one of the following things:

@@ -7,15 +7,13 @@ from sqlalchemy import (
     Time,
     ForeignKey,
     )
-from webhelpers.text import urlify
+# from webhelpers.text import urlify
 from sqlalchemy.ext.declarative import declarative_base
-
 from sqlalchemy.orm import (
     scoped_session,
     sessionmaker,
     relationship,
     )
-
 from zope.sqlalchemy import ZopeTransactionExtension
 
 DBSession = scoped_session(sessionmaker(extension=ZopeTransactionExtension()))
@@ -32,13 +30,13 @@ class Truck(Base):
     twitter = Column(Text)
     website = Column(Text)
 
-    @property
-    def slug(self):
-        return urlify(self.name)
-
     @classmethod
     def all(cls):
         return DBSession.query(cls).order_by(cls.name).all()
+
+    @classmethod
+    def by_id(cls, id):
+        return DBSession.query(cls).filter(cls.id == id).one()
 
     @classmethod
     def add_truck(cls, request):
