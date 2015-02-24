@@ -45,8 +45,10 @@ def main(global_config, **settings):
     config.add_route('home', '/')
     config.add_route('trucks', '/tructionary')
     config.add_route('truck_detail', '/tructionary/{name}')
-    config.add_route('neighborhood', '/neighborhood/{neighborhood:(slu|downtown|ballard)}')
-    config.add_route('cuisine', '/cuisine/{cuisine}')
+    config.add_route('neighborhood',
+                     '/neighborhood/{neighborhood:(slu|downtown|ballard)}')
+    config.add_route('cuisine',
+                     '/cuisine/{cuisine:(american|asian|bbq|intl|medi|mex|sweets)}')
     # ADMIN #
     config.add_route('login', '/login')
     config.add_route('logout', '/logout')
