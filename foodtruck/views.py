@@ -111,7 +111,6 @@ def admin(request):
 def edit(request):
     if request.authenticated_userid:
         try:
-            import pdb; pdb.set_trace()
             id = request.matchdict.get('id', None)
             truck = Truck.by_id(id)
         except DBAPIError:
