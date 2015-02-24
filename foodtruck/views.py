@@ -28,6 +28,16 @@ def tructionary(request):
     return {'trucks': trucks}
 
 
+@view_config(route_name='truck_detail', renderer='templates/truck_detail.jinja2')
+def truck_detail(request):
+    try:
+        id = request.matchdict.get('id', None)
+        truck = Truck.by_id(id)
+    except DBAPIError:
+        return HTTPInternalServerError
+    return {'truck': truck}
+
+
 @view_config(route_name='neighborhood', renderer='templates/neighborhood.jinja2')
 def neighborhood(request):
     neighborhood = request.matchdict.get('neighborhood', None)
