@@ -1,8 +1,9 @@
 from pyramid.response import Response
 from pyramid.view import view_config
-
+from pyramid.httpexceptions import HTTPFound
 from sqlalchemy.exc import DBAPIError
-
+from pyramid.security import remember, forget
+from cryptacular.bcrypt import BCRYPTPasswordManager
 from .models import (
     DBSession,
     Truck,
@@ -37,6 +38,46 @@ def neighborhood(request):
 def cuisine(request):
     cuisine = request.matchdict.get('cuisine', None)
     return {'cuisine': cuisine}
+
+
+####################
+# LOG IN / LOG OUT #
+####################
+@view_config(route_name='login', renderer="templates/login.jinja2")
+def login(request):
+    """authenticate a user by username/password"""
+    username = request.params.get('username', '')
+    error = ''
+    if request.method == 'POST':
+        error = "Login Failed"
+        authenticated = False
+        try:
+            authenticated = do_login(request)
+        except ValueError as e:
+            error = str(e)
+        if authenticated:
+            headers = remember(request, username)
+            return HTTPFound(request.route_url('home'), headers=headers)
+    return {'error': error, 'username': username}
+
+
+def do_login(request):
+    username = request.params.get('username', None)
+    password = request.params.get('password', None)
+    if not (username and password):
+        raise ValueError('both username and password are required')
+    settings = request.registry.settings
+    manager = BCRYPTPasswordManager()
+    if username == settings.get('auth.username', ''):
+        hashed = settings.get('auth.password', '')
+        return manager.check(hashed, password)
+
+
+@view_config(route_name='logout')
+def logout(request):
+    """remove authentication from a session"""
+    headers = forget(request)
+    return HTTPFound(request.route_url('home'), headers=headers)
 
 
 conn_err_msg = """\
