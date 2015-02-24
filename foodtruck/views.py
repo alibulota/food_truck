@@ -1,6 +1,6 @@
 from pyramid.response import Response
 from pyramid.view import view_config
-from pyramid.httpexceptions import HTTPFound
+from pyramid.httpexceptions import HTTPFound, HTTPForbidden, HTTPInternalServerError
 from sqlalchemy.exc import DBAPIError
 from pyramid.security import remember, forget
 from cryptacular.bcrypt import BCRYPTPasswordManager
@@ -57,7 +57,7 @@ def login(request):
             error = str(e)
         if authenticated:
             headers = remember(request, username)
-            return HTTPFound(request.route_url('home'), headers=headers)
+            return HTTPFound(request.route_url('admin'), headers=headers)
     return {'error': error, 'username': username}
 
 
@@ -78,6 +78,32 @@ def logout(request):
     """remove authentication from a session"""
     headers = forget(request)
     return HTTPFound(request.route_url('home'), headers=headers)
+
+
+#########
+# ADMIN #
+#########
+@view_config(route_name='add', request_method='POST')
+def add_truck(request):
+    if request.authenticated_userid:
+        try:
+            Truck.add_truck(request)
+        except DBAPIError:
+            return HTTPInternalServerError
+    else:
+        return HTTPForbidden()
+
+
+@view_config(route_name='admin', renderer='templates/admin.jinja2')
+def admin(request):
+    if request.authenticated_userid:
+        try:
+            trucks = Truck.all()
+        except DBAPIError:
+            return HTTPInternalServerError
+        return {'trucks': trucks}
+    else:
+        return HTTPForbidden()
 
 
 conn_err_msg = """\

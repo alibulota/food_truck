@@ -36,6 +36,17 @@ class Truck(Base):
     def all(cls):
         return DBSession.query(cls).order_by(cls.name).all()
 
+    @classmethod
+    def add_truck(cls, request):
+        name = request.params.get('name', None)
+        food_type = request.params.get('cuisine', None)
+        payment = request.params.get('payment', None)
+        twitter = request.params.get('twitter', None)
+        website = request.params.get('website', None)
+        new_entry = cls(name=name, food_type=food_type, payment=payment,
+                        twitter=twitter, website=website)
+        DBSession.add(new_entry)
+
 
 class Locations(Base):
     __tablename__ = 'locations'
