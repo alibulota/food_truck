@@ -44,7 +44,7 @@ def main(global_config, **settings):
     # FRONT END #
     config.add_route('home', '/')
     config.add_route('trucks', '/tructionary')
-    config.add_route('truck_detail', '/tructionary/{name}')
+    config.add_route('truck_detail', '/tructionary/{id:\d+}')
     config.add_route('neighborhood',
                      '/neighborhood/{neighborhood:(slu|downtown|ballard)}')
     config.add_route('cuisine',
@@ -54,5 +54,6 @@ def main(global_config, **settings):
     config.add_route('logout', '/logout')
     config.add_route('add', '/admin/add')
     config.add_route('admin', '/admin')
+    config.add_route('edit', 'admin/edit/{id:\d+}')
     config.scan()
     return config.make_wsgi_app()
