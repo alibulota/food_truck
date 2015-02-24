@@ -31,21 +31,23 @@
 
 
 {% block body %}
-  <h2>Login</h2>
-  {% if error -%}
-  <p class="error"><strong>Error</strong>: {{ error }}
-  {%- endif %}
-  <form action="{{ request.route_url('login') }}" method="POST">
-    <div>
-      <label for="username">Username</label>
-      <input type="text" name="username" id="username"/>
-    </div>
-    <div>
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password"/>
-    </div>
-    <div>
-      <input type="submit" name="Login" value="Login"/>
-    </div>
-  </form>
+  <div class="container">
+    <h2>Login</h2>
+    {% if error -%}
+    <p class="error"><strong>Error</strong>: {{ error }}
+    {%- endif %}
+    <form action="{{ request.route_url('login') }}" method="POST">
+      <div>
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username"/>
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password"/>
+      </div>
+      <div>
+        <input type="submit" name="Login" value="Login"/>
+      </div>
+    </form>
+  <div>
 {% endblock %}
