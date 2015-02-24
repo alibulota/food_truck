@@ -17,8 +17,8 @@ def main(global_config, **settings):
     settings['sqlalchemy.url'] = os.environ.get(
         'DATABASE_URL', 'postgresql://jwarren:@localhost:5432/food_truck')
 
-    settings['auth.username'] = os.environ.get('AUTH_USERNAME', 'admin')
     manager = BCRYPTPasswordManager()
+    settings['auth.username'] = os.environ.get('AUTH_USERNAME', 'admin')
     settings['auth.password'] = os.environ.get(
         'AUTH_PASSWORD', manager.encode('secret')
     )
@@ -45,10 +45,12 @@ def main(global_config, **settings):
     config.add_route('home', '/')
     config.add_route('trucks', '/tructionary')
     config.add_route('truck_detail', '/tructionary/{name}')
-    config.add_route('neighborhood', '/neighborhood/{neighborhood}')
+    config.add_route('neighborhood', '/neighborhood/{neighborhood:(slu|downtown|ballard)}')
     config.add_route('cuisine', '/cuisine/{cuisine}')
     # ADMIN #
     config.add_route('login', '/login')
     config.add_route('logout', '/logout')
+    config.add_route('add', '/admin/add')
+    config.add_route('admin', '/admin')
     config.scan()
     return config.make_wsgi_app()
