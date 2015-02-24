@@ -5,6 +5,10 @@ from .models import (
     Base,
     )
 import os
+from pyramid.session import SignedCookieSessionFactory
+from cryptacular.bcrypt import BCRYPTPasswordManager
+from pyramid.authentication import AuthTktAuthenticationPolicy
+from pyramid.authorization import ACLAuthorizationPolicy
 
 
 def main(global_config, **settings):
@@ -12,10 +16,29 @@ def main(global_config, **settings):
     """
     settings['sqlalchemy.url'] = os.environ.get(
         'DATABASE_URL', 'postgresql://jwarren:@localhost:5432/food_truck')
+
+    settings['auth.username'] = os.environ.get('AUTH_USERNAME', 'admin')
+    manager = BCRYPTPasswordManager()
+    settings['auth.password'] = os.environ.get(
+        'AUTH_PASSWORD', manager.encode('secret')
+    )
+    secret = os.environ.get('JOURNAL_SESSION_SECRET', 'itsaseekrit')
+    session_factory = SignedCookieSessionFactory(secret)
+    auth_secret = os.environ.get('JOURNAL_AUTH_SECRET', 'anotherseekrit')
+    config = Configurator(
+        settings=settings,
+        session_factory=session_factory,
+        authentication_policy=AuthTktAuthenticationPolicy(
+            secret=auth_secret,
+            hashalg='sha512',
+            debug=True
+        ),
+        authorization_policy=ACLAuthorizationPolicy(),
+    )
+
     engine = engine_from_config(settings, 'sqlalchemy.')
     DBSession.configure(bind=engine)
     Base.metadata.bind = engine
-    config = Configurator(settings=settings)
     config.include('pyramid_jinja2')
     config.add_static_view('static', 'static', cache_max_age=3600)
     # FRONT END #
