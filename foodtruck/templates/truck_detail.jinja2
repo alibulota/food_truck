@@ -32,26 +32,25 @@
 
 {% block body %}
     <div class="container theme-showcase" role="main">
-      <div class="jumbotron">
+<!--       <div class="jumbotron">
         <h1>Tructionary <small style="color: darkgray"><i>noun</i></small></h1>
         <p style="margin-left: 10%">a massive directory of food trucks for your eating pleasure</p>
-<!--         <img class="dino-img" src="../static/img/dinotruck.png" alt="the dine-o-truck dino!" align="center"> -->
-      </div>
+      </div> -->
+    <a href="#" onclick="history.back();"><span class="glyphicon glyphicon-arrow-left"></span>  Back to trucks</a>
       <div class="truck_detail">
-      <h1>{{ truck.name }}</h1>
-      <ul class="truck_detail">
-        <li>Cuisine: {{ truck.cuisine }}</li>
-         {% for neighborhood in truck.location %}
-        <li>Where its at: {{ neighborhood }}</li>
-        {% else %}
-        <p><em>No locations in database</em></p>
-        {% endfor %}
-        <li>Accepted Payment: {{ truck.payment }}</li>
-        <li>Website: <a href="{{ truck.website }}">{{ truck.website }}</a></li>
-      </ul>
+        <h1>{{ truck.name }}</h1>
+        <ul class="truck_detail">
+          <li>Cuisine: {{ truck.cuisine }}</li>
+          {% for location in truck.locations %}
+            <li>Parked: <b>{{ location.day }}</b> in <b>{{ location.neighborhood }}</b> from {{ location.start_time }} to {{ location.end_time }}</br>
+            <em>{{ location.address }}</em></li>
+          {% else %}
+            <p><em>No locations in database</em></p>
+          {% endfor %}
+          <li>Accepted Payment: {{ truck.payment }}</li>
+          <li>Website: <a href="{{ truck.website }}">{{ truck.website }}</a></li>
+        </ul>
       </div>
-        
-      
-  
+
     </div> <!-- /container -->
 {% endblock %}

@@ -59,6 +59,10 @@ body {
   padding: 10px;
 }
 
+.truck_detail li {
+  margin-bottom: 6px;
+}
+
 .truck_form {
   display: block;
   float: left;
