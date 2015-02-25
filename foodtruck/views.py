@@ -10,6 +10,23 @@ from .models import (
     )
 
 
+cuisine_dict = {
+    'american': 'American',
+    'asian': 'Asian',
+    'bbq': 'BBQ',
+    'intl': 'International',
+    'medi': 'Mediterranean',
+    'mex': 'Mexican',
+    'sweets': 'Sweets'
+}
+
+neighborhood_dict = {
+    'slu': 'South Lake Union',
+    'ballard': 'Ballard',
+    'downtown': 'Downtown',
+}
+
+
 @view_config(route_name='home', renderer='templates/index.jinja2')
 def index(request):
     try:
@@ -40,14 +57,17 @@ def truck_detail(request):
 
 @view_config(route_name='neighborhood', renderer='templates/neighborhood.jinja2')
 def neighborhood(request):
-    neighborhood = request.matchdict.get('neighborhood', None)
-    return {'neighborhood': neighborhood}
+    neighborhood_ = request.matchdict.get('neighborhood', None)
+    neighborhood_name = neighborhood_dict[neighborhood_]
+    return {'neighborhood_name': neighborhood_name}
 
 
 @view_config(route_name='cuisine', renderer='templates/cuisine.jinja2')
 def cuisine(request):
-    cuisine = request.matchdict.get('cuisine', None)
-    return {'cuisine': cuisine}
+    cuisine_ = request.matchdict.get('cuisine', None)
+    cuisine_type = cuisine_dict[cuisine_]
+    cuisine = Truck.by_cuisine(cuisine_type)
+    return {'cuisine': cuisine, 'cuisine_type': cuisine_type}
 
 
 ####################
