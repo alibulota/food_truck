@@ -32,22 +32,42 @@
 
 {% block body %}
   <div class="container">
-    <h2>Login</h2>
-    {% if error -%}
-    <p class="error"><strong>Error</strong>: {{ error }}
-    {%- endif %}
-    <form action="{{ request.route_url('login') }}" method="POST">
+    <a href="/admin"><span class="glyphicon glyphicon-arrow-left"></span>  Back to dashboard</a>
+    <h2>Edit Truck: {{ truck.name }}</h2>
+    <form action="{{ request.route_url('edit', id=truck.id) }}" method="POST">
       <div>
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username"/>
+        <label for="name">Truck Name</label>
+        <input type="text" name="name" id="name" value="{{truck.name}}"/>
       </div>
       <div>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password"/>
+        <label for="cuisine">Cuisine</label>
+        <input type="text" name="cuisine" id="cuisine" value="{{truck.cuisine}}"/>
       </div>
       <div>
-        <input type="submit" name="Login" value="Login"/>
+        <label for="payment">Payment</label>
+        <input type="text" name="payment" id="payment" value="{{truck.payment}}"/>
+      </div>
+      <div>
+        <label for="twitter">Twitter address</label>
+        <input type="text" name="twitter" id="twitter" value="{{truck.twitter}}"/>
+      </div>
+      <div>
+        <label for="website">Web address</label>
+        <input type="text" name="website" id="website" value="{{truck.website}}"/>
+      </div>
+      <div>
+        <input type="submit" name="add" value="Update It!"/>
       </div>
     </form>
+    </br>
+    <h4>Neighborhoods for {{ truck.name }}:</h4>
+    <ul>
+    {% for neighborhood in truck.locations %}
+      <li>{{ neighborhood }}</li>
+    {% else %}
+    <p><em>No locations in database</em></p>
+    {% endfor %}
+    </ul>
+
   <div>
 {% endblock %}

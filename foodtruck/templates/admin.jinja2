@@ -32,22 +32,42 @@
 
 {% block body %}
   <div class="container">
-    <h2>Login</h2>
-    {% if error -%}
-    <p class="error"><strong>Error</strong>: {{ error }}
-    {%- endif %}
-    <form action="{{ request.route_url('login') }}" method="POST">
+    <h2>Add Truck</h2>
+    <form action="{{ request.route_url('add') }}" method="POST">
       <div>
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username"/>
+        <label for="name">Truck Name</label>
+        <input type="text" name="name" id="name"/>
       </div>
       <div>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password"/>
+        <label for="cuisine">Cuisine</label>
+        <input type="text" name="cuisine" id="cuisine"/>
       </div>
       <div>
-        <input type="submit" name="Login" value="Login"/>
+        <label for="payment">Payment</label>
+        <input type="text" name="payment" id="payment"/>
+      </div>
+      <div>
+        <label for="twitter">Twitter address</label>
+        <input type="text" name="twitter" id="twitter"/>
+      </div>
+      <div>
+        <label for="website">Web address</label>
+        <input type="text" name="website" id="website"/>
+      </div>
+      <div>
+        <input type="submit" name="add" value="Truck It!"/>
       </div>
     </form>
   <div>
+
+  <div class="page-header">
+    <h1>The Trucks</h1>
+    <ul class="tructionary">
+    {% for truck in trucks %}
+      <li><a href="/admin/edit/{{ truck.id }}">
+      <small>ID: {{ truck.id }}</small> | Name: {{ truck.name }} | <small>Cuisine: {{ truck.cuisine }}</small>
+      </a></li>
+    {% endfor %}
+    </ul>
+  </div>
 {% endblock %}

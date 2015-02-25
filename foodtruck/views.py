@@ -1,8 +1,9 @@
 from pyramid.response import Response
 from pyramid.view import view_config
-
+from pyramid.httpexceptions import HTTPFound, HTTPForbidden, HTTPInternalServerError
 from sqlalchemy.exc import DBAPIError
-
+from pyramid.security import remember, forget
+from cryptacular.bcrypt import BCRYPTPasswordManager
 from .models import (
     DBSession,
     Truck,
@@ -12,19 +13,29 @@ from .models import (
 @view_config(route_name='home', renderer='templates/index.jinja2')
 def index(request):
     try:
-        pass
+        trucks = Truck.all()
     except DBAPIError:
         return Response(conn_err_msg, content_type='text/plain', status_int=500)
-    return {'': ''}
+    return {'trucks': trucks}
 
 
 @view_config(route_name='trucks', renderer='templates/tructionary.jinja2')
 def tructionary(request):
     try:
-        pass
+        trucks = Truck.all()
     except DBAPIError:
         return Response(conn_err_msg, content_type='text/plain', status_int=500)
-    return {'': ''}
+    return {'trucks': trucks}
+
+
+@view_config(route_name='truck_detail', renderer='templates/truck_detail.jinja2')
+def truck_detail(request):
+    try:
+        id = request.matchdict.get('id', None)
+        truck = Truck.by_id(id)
+    except DBAPIError:
+        return HTTPInternalServerError
+    return {'truck': truck}
 
 
 @view_config(route_name='neighborhood', renderer='templates/neighborhood.jinja2')
@@ -39,6 +50,9 @@ def cuisine(request):
     return {'cuisine': cuisine}
 
 
+####################
+# LOG IN / LOG OUT #
+####################
 @view_config(route_name='login', renderer="templates/login.jinja2")
 def login(request):
     """authenticate a user by username/password"""
@@ -53,8 +67,74 @@ def login(request):
             error = str(e)
         if authenticated:
             headers = remember(request, username)
-            return HTTPFound(request.route_url('home'), headers=headers)
+            return HTTPFound(request.route_url('admin'), headers=headers)
     return {'error': error, 'username': username}
+
+
+def do_login(request):
+    username = request.params.get('username', None)
+    password = request.params.get('password', None)
+    if not (username and password):
+        raise ValueError('both username and password are required')
+    settings = request.registry.settings
+    manager = BCRYPTPasswordManager()
+    if username == settings.get('auth.username', ''):
+        hashed = settings.get('auth.password', '')
+        return manager.check(hashed, password)
+
+
+@view_config(route_name='logout')
+def logout(request):
+    """remove authentication from a session"""
+    headers = forget(request)
+    return HTTPFound(request.route_url('home'), headers=headers)
+
+
+#########
+# ADMIN #
+#########
+@view_config(route_name='add', request_method='POST')
+def add_truck(request):
+    if request.authenticated_userid:
+        try:
+            Truck.add_truck(request)
+            return HTTPFound(request.route_url('admin'))
+        except DBAPIError:
+            return HTTPInternalServerError
+    else:
+        return HTTPForbidden()
+
+
+@view_config(route_name='admin', renderer='templates/admin.jinja2')
+def admin(request):
+    if request.authenticated_userid:
+        try:
+            trucks = Truck.all()
+        except DBAPIError:
+            return HTTPInternalServerError
+        return {'trucks': trucks}
+    else:
+        return HTTPForbidden()
+
+
+@view_config(route_name='edit', renderer='templates/edit.jinja2')
+def edit(request):
+    if request.authenticated_userid:
+        if request.method == 'GET':
+            try:
+                id = request.matchdict.get('id', None)
+                truck = Truck.by_id(id)
+            except DBAPIError:
+                return HTTPInternalServerError
+            return {'truck': truck}
+        elif request.method == 'POST':
+            try:
+                Truck.edit_truck(request)
+            except DBAPIError:
+                return HTTPInternalServerError
+            return HTTPFound(request.route_url('admin'))
+    else:
+        return HTTPForbidden()
 
 
 conn_err_msg = """\

@@ -29,3 +29,12 @@ body {
   border-style: solid none !important;
   border-width: 1px;
 }
+
+.tructionary {
+  list-style: none;
+  font-size: 150%;
+}
+
+.tructionary li {
+  padding: 6px;
+}

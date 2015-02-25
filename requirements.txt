@@ -1,3 +1,4 @@
+-e git+https://github.com/alibulota/food_truck.git@4e103bd0879e1f7df4b847fca3a073fe330b7ea8#egg=FoodTruck-master
 Jinja2==2.7.3
 Mako==1.0.1
 MarkupSafe==0.23
@@ -5,6 +6,13 @@ PasteDeploy==1.5.2
 Pygments==2.0.2
 SQLAlchemy==0.9.8
 WebOb==1.4
+argparse==1.3.0
+cryptacular==1.4.1
+extras==0.0.3
+fuzzywuzzy==0.5.0
+lettuce==0.2.20
+mock==1.0.1
+pbkdf2==1.3
 psycopg2==2.6
 pyramid==1.5.3
 pyramid-chameleon==0.3
@@ -12,9 +20,15 @@ pyramid-debugtoolbar==2.3
 pyramid-jinja2==2.3.3
 pyramid-mako==1.0.2
 pyramid-tm==0.11
+python-mimeparse==0.1.4
+python-subunit==1.0.0
 repoze.lru==0.6
+six==1.9.0
+sure==1.2.9
+testtools==1.5.0
 transaction==1.4.3
 translationstring==1.3
+unittest2==0.8.0
 venusian==1.0
 waitress==0.8.9
 wsgiref==0.1.2
