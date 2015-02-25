@@ -30,6 +30,15 @@ body {
   border-width: 1px;
 }
 
+#no_guarantee {
+  font-size: 60%;
+  text-align: center;
+}
+.page-header {
+  float:left;
+  width: 60%;
+}
+
 .tructionary {
   list-style: none;
   font-size: 150%;
@@ -38,3 +47,21 @@ body {
 .tructionary li {
   padding: 6px;
 }
+
+.truck_detail {
+  list-style: none;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.truck_detail ul {
+  padding: 10px;
+
+}
+
+.twitter_widget {
+  float: right;
+  width: 30%;
+}
+
+
