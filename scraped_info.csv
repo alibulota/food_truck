@@ -1,225 +1,49 @@
-trucks,trucks-href,food type,payment,description,monday,tuesday,wednesday,thursday,friday
-"Seattle Cookie Counter","http://www.seattlefoodtruck.com/index.php/trucks/cookie-counter/","Sweets","Cash or Cards","We serve 100% vegan ice cream sandwiches – we make the ice cream and the cookies by hand and pre-package the sandwiches at our kitchen space.","null","South Lake Union
-Boren Ave N and Harrison St, SLU Pods, 3p – 7p","Queen Anne
-1630 Queen Anne Ave N, Umpqua Bank, 12p – 6p","Downtown Seattle
-401 Pine St, Westlake Park, 3p – 7p","Beacon Hill
-2524 16th Ave S, El Centro de la Raza, 2p – 6p"
-"POP UP","http://www.seattlefoodtruck.com/index.php/trucks/pop-up/","Sweets","Cards Only","Artisan ice cream bars, popsicles, and ice cream sandwiches","Downtown Seattle
-Roaming, 11a – 2p","null","Queen Anne
-Gates Foundation courtyard, 11a – 2p","South Lake Union
-South Lake Union Farmers Market, 11a – 2p","SoDo
-2401 Utah Ave S, Starbucks HQ, 11a – 2p"
-"Spice on Curve","http://www.seattlefoodtruck.com/index.php/trucks/spice-on-curve/","null","null","null","null","null","null","null","null"
-"Napkin Friends","http://www.seattlefoodtruck.com/index.php/trucks/napkin-friends/","Jewish","Cash or Cards","Sandwiches where the bread is removed and replaced by two crispy, delectable latkes (potato cakes).","South Lake Union
-2100 Westlake Ave, parking lot pod, 11a – 2p","SoDo
-2401 Utah Ave S, Starbucks HQ, 11a – 2p","null","null","Bellevue
-106th Ave NE and NE 6th St, 11a – 2p"
-"Papa Bois","http://www.seattlefoodtruck.com/index.php/trucks/papa-bois/","Caribbean Fusion","Unknown","A mash up of Caribbean and Southeast Asian flavors","South Lake Union
-Boren Ave N and Harrison St, SLU Pods, 11:30a – 2p","Queen Anne
-101 Elliott Ave W, PI Building, 11:30a – 2p","Downtown Seattle
-McGraw Square Stewart St and 5th Ave, 11:30a – 2p","null","South Lake Union
-Boren Ave N and Harrison St, SLU Pods, 11:30a – 2p"
-"NOSH","http://www.seattlefoodtruck.com/index.php/trucks/nosh/","British","Cash or Cards","From hand pulled mozzarella to hand rolled all butter pastry for our pies and we grind all of our own meat. There is a little of something for everybody.","Bellevue
-106th Ave NE and NE 6th St, 11a – 2p","South Lake Union
-Boren Ave N and Harrison St, SLU Pods, 11a – 2p","South Lake Union
-2100 Westlake Ave, parking lot pod, 11a – 2p","Queen Anne
-101 Elliot Ave W, PI Building, 11a – 2p","Downtown Seattle
-2nd Ave and Pike St,"
-"Saffron Spice","http://www.seattlefoodtruck.com/index.php/trucks/saffron-spice/","Indian","Cash or Cards","Indian inspired wraps and bowls","South Lake Union
-2116 Westlake Ave, 11a – 2p","South Lake Union
-2116 Westlake Ave, 11a – 2p","null","South Lake Union
-2116 Westlake Ave, 11a – 2p","null"
-"ThaiUUp","http://www.seattlefoodtruck.com/index.php/trucks/thaiuup/","Thai","Cash Only","Thai","South Lake Union
-200 Boren Ave N, 11a – 2p","South Lake Union
-1116 Harrison St, 11a – 2p","South Lake Union
-1116 Harrison St, 11a – 2p","South Lake Union
-1116 Harrison St, 11a – 2p","White Center
-2851 SW Roxbury St, 76 Gas Station, 4p – 9p"
-"Hot Dog King","http://www.seattlefoodtruck.com/index.php/trucks/hot-dog-king/","Hot Dogs","Cash or Cards","35 toppings to choose from, including 20 different mustards.  From the locally sourced half pound Jalapeño & Cheese Brat to the best Vegan sausage around, The Hot Dog King has got you covered.","South Lake Union
-400 Westlake Ave N,  in front of the Firestone, 11a – 2p","South Lake Union
-400 Westlake Ave N,  in front of the Firestone, 11a – 2p","South Lake Union
-400 Westlake Ave N,  in front of the Firestone, 11a – 2p","South Lake Union
-400 Westlake Ave N,  in front of the Firestone, 11a – 2p","South Lake Union
-400 Westlake Ave N,  in front of the Firestone, 11a – 2p"
-"Raney Brothers BBQ","http://www.seattlefoodtruck.com/index.php/trucks/raney-brothers-bbq/","BBQ","Cash or Cards","Pulled pork, grinders and more","South Lake Union
-Westlake Ave N and Harrison St, 11a – 2p","Downtown Seattle
-83 King St S, 11a – 2p","Downtown Seattle
-5th Ave and Union St, 11a – 2p","Queen Anne
-101 Elliott Ave W, PI Building, 11a – 2p","Downtown Seattle
-1010 Seneca St, Virginia Mason, 11a – 2pm."
-"Charlie’s","http://www.seattlefoodtruck.com/index.php/trucks/charlies/","Burgers / Cheesesteaks","Cash or Cards","A fresh take on American diner fare","Redmond
-Microsoft Campus, 11a – 2p","Redmond
-Microsoft Campus, 11a – 2p","South Lake Union
-960 Republican St, 11a – 2p","Redmond
-Microsoft Campus, 11a – 2p","null"
-"Tacos el Tajin","http://www.seattlefoodtruck.com/index.php/trucks/tacos-el-tajin/","Mexican","Cash or Cards","Taco Truck","null","South Lake Union
-Boren Ave N and Republican St, 11a – 2p","null","null","South Lake Union
-Boren Ave N and Republican St, 11a – 2p"
-"Poke to the Max","http://www.seattlefoodtruck.com/index.php/trucks/poke-to-the-max/","Poke / Hawaiian","Cash or Cards","Loco Moco, Kalua Pork, lots of Poke and other great Hawaiian dishes","Queen Anne
-101 Elliott Ave W, PI Building, 11a – 2p","South Lake Union
-531 Stewart St, McGraw Square, 11a – 2p","Bellevue
-106th Ave NE and NE 6th St, 11a – 2p","South Lake Union
-1415 Dexter Ave N, 11a – 2p","Bellevue
-106th Ave NE and NE 6th St, 11a – 2p"
-"Caravan Crêpes","http://www.seattlefoodtruck.com/index.php/trucks/caravan-crepes/","French","Cash or Cards","Sweet and Savory Crêpes","Bellevue
-106th Ave NE and NE 6th St, 11a – 2p","South Lake Union
-Boren Ave N and Harrison St, SLU Pods, 11a – 2p","International District
-5th Ave S and S Dearborn St, 11a – 1:30p","Queen Anne
-W Crockett St at Queen Anne Ave N, Queen Anne Farmers Market, 3p – 7:30p","South Lake Union
-Westlake Ave N and Harrison St, 11a – 2p"
-"Cheese Wizards","http://www.seattlefoodtruck.com/index.php/trucks/cheese-wizards/","Sandwiches","Cash, Cards, or Level Up","Grilled Cheese Magic","South Lake Union
-Westlake Ave N and Republican St, next to the Tesla dealership, 11a – 2p","South Lake Union
-2100 Westlake Ave, parking lot pod, 11a – 2p","Bellevue
-106th Ave NE and NE 6th St, 11a – 2p","South Lake Union
-Westlake Ave N and Republican St, near Tesla, 11a – 2p","Bellevue
-11201 SE 8th St, Great Western Building, 11a – 2p"
-"Fez","http://www.seattlefoodtruck.com/index.php/trucks/fez/","Mediterranean","Cash or cards","Modern Middle eastern street food (and drink)!","null","Bellevue
-600 106th Ave NE, 11a – 2p","South Lake Union
-Fairview Ave N and Republican St, 11a – 2p","Bellevue
-106th Ave NE and NE 6th St, 11a – 2p","Pioneer Square
-505 1st Ave S, the loading dock around back on Railroad Way S, 11a – 2p"
-"BUNS","http://www.seattlefoodtruck.com/index.php/trucks/buns/","Burgers","Cash or Cards","Gourmet burgers made from organic ingredients.","null","South Lake Union
-201 Terry Ave N, 11a – 2p","South Lake Union
-201 Terry Ave N, 11a – 2p","null","Downtown Seattle
-2nd Ave and Union St, 11a – 2p"
-"Chick’n Fix","http://www.seattlefoodtruck.com/index.php/trucks/chickn-fix/","American / Filipino","Cash or Cards","Serving up delicious chicken treats!","Downtown Seattle
-2nd Ave and Pike St, 11a – 2p","South Lake Union
-Boren Ave N and Harrison St, SLU Pods, 11a – 2p","West Seattle
-1801 16th Ave SW, Vigor Shipyard, 11a – 2p","South Lake Union
-Boren Ave N and Harrison St, SLU Pods, 11a – 2p","null"
-"Plum Vegan Burgers and More","http://www.seattlefoodtruck.com/index.php/trucks/plum-vegan-burgers-more/","Vegan burgers, sandwiches, salads","Cash or Cards","Vegan burgers, sandwiches, salads","Redmond
-3720 159th Ave NE, Building 34 on Microsoft Redmond Campus, 11a – 2p","South Lake Union
-333 Boren Ave N, 11a – 2p","null","South Lake Union
-333 Boren Ave N, 11a – 2p","Downtown Seattle
-2nd Ave and Pike St, 11a – 2p"
-"Djung on Wheels","http://www.seattlefoodtruck.com/index.php/trucks/djung-on-wheels/","Thai","Unknown","Family-owned business offering great Thai food","South Lake Union
-511 Boren Ave N, 11a – 2p","5th Ave and Union St,","South Lake Union
-511 Boren Ave N, 11a – 2p","null","South Lake Union
-511 Boren Ave N, 11a – 2p"
-"Falafel Salam","http://www.seattlefoodtruck.com/index.php/trucks/falafel-salam/","Middle Eastern","Unknown","Gourmet, authentic falafel & shawarma","Downtown Seattle
-1000 4th Ave, Downtown Public Library, 11a – 1:45p","Downtown Seasttle
-401 Pine St, Westlake Park, 11a – 2p","South Lake Union
-Boren Ave N and Harrison St, SLU Pods, 11a – 2p","South Lake Union
-Boren Ave N and Harrison St, SLU Pods, 11a – 2p","Downtown Seattle
-401 Pine St, Westlake Park, 11a – 2p"
-"Off the Rez","http://www.seattlefoodtruck.com/index.php/trucks/off-the-rez/","Native American","Cash or Cards","Native American inspired cuisine including Indian tacos and fry bread","null","null","South Lake Union
-Boren Ave N and Harrison St, SLU Pods, 11a – 2p","Downtown Seattle
-2nd Ave and Pike St, 11a – 2p","Bellevue
-106th Ave NE and NE 6th St, 11a – 2p"
-"Chopstix","http://www.seattlefoodtruck.com/index.php/trucks/chopstix/","Asian Fusion","Cash or Cards","Asian Fusion, like the truck’s name Chopstix. Our specialty is a little twist of Asian cuisine with western cuisine","null","Downtown Seattle
-5th Ave and Pike St, 11a – 2p","South Lake Union
-Terry Ave N and Republican St, 11a – 2p","South Lake Union
-Terry Ave N and Republican St, 11a – 2p","null"
-"Hungry Me","http://www.seattlefoodtruck.com/index.php/trucks/hungry-me/","Mixed East Asian","Cash or Cards","Mixed fast Asian cuisine featuring Singaporean (Hainan) chicken rice, Japanese and Chinese beef brisket, Thai peanut sauce curry","Ballard
-907 NW Ballard Way, Trupanion, 11a – 2p","South Lake Union
-2100 Westlake Ave, parking lot pod (Westlake and Lenora), 11a – 2p","Downtown Seattle
-1600 7th Ave, across from Barnes and Noble, 11a – 2p","South Lake Union
-500 Boren Ave N, 11a – 2p","null"
-"Xplosive Truck","http://www.seattlefoodtruck.com/index.php/trucks/xplosive-truck/","Filipino-Vietnamese Fusion","Cash Only","Delicious banh mi and spicy fusion tacos","South Lake Union
-Boren Ave N and Republican St, 11a – 1:30p","South Lake Union
-425 Terry Ave N, south side of RepublicanSt, next to Northeastern University, 11a – 1:30p","South Lake Union
-Boren Ave N and Republican St, 11a – 1:30p","South Lake Union
-Boren Ave N and Thomas St, 11a – 1:30p","South Lake Union
-425 Terry Ave N, south side of Republican St, next to Northeastern University, 11a – 2p"
-"Fusion on the Run","http://www.seattlefoodtruck.com/index.php/trucks/fusion-on-the-run/","Sandwiches","Cash or Cards","Mexican, Hawaiian, Asian fusion tacos and sandwiches","South Lake Union
-2100 Westlake Ave, parking lot pod, 11a – 2p","Downtown Seattle
-2nd Ave and Union St, 11a – 2p","null","Downtown Seattle
-2nd Ave and Union St, 11a – 2p","null"
-"NaanSense","http://www.seattlefoodtruck.com/index.php/trucks/naansense/","Indian","Cash or Cards","Seattle’s only truck with an on-board Tandoori Oven serving fresh Naan to order!","South Lake Union
-2100 Westlake Ave, parking lot pod, 11a – 1:30p","Bellevue
-106th Ave NE and NE 6th St, 11a – 2p","South Lake Union
-Boren Ave N and Republican St, 11a – 1:30p","South Lake Union
-2100 Westlake Ave, parking lot pod, 11a – 1:30p","South Lake Union
-Boren Ave N and Republican St, 11a – 1:30p"
-"Now Make Me A Sandwich","http://www.seattlefoodtruck.com/index.php/trucks/now-make-me-a-sandwich/","Sandwiches","Cash or Cards","","South Lake Union
-Terry Ave N and Thomas St, 11a – 1:45p","null","South Lake Union
-Terry Ave N and Thomas St, 11a – 1:45p","Redmond
-8763 and 8809 148th Ave NE, West Willows Technology Center, 11a – 1:45p","South Lake Union
-Terry Ave N and Thomas St, 11a – 1:45p"
-"Peasant Food Manifesto","http://www.seattlefoodtruck.com/index.php/trucks/peasant-food-manifesto","Global Fusion","Cash or Cards","Global Fusion Comfort Foods!","South Lake Union
-219 Terry Ave N between Thomas & John!, 11a – 2p","null","Bellevue
-106th Ave NE and NE 6th St, 11a – 2p","South Lake Union
-Terry Ave N and Thomas St, 11a – 2p","South Lake Union
-219 Terry Ave N between Thomas & John, 11a – 2p"
-"Lumpia World","http://www.seattlefoodtruck.com/index.php/trucks/lumpia-world/","Filipino","Cash or Cards","Lumpia, katsu sliders & steamy soup served up with love","Downtown Seattle
-4th Ave and Pine St, 11:30a – 2p","South Lake Union
-Westlake Ave N and Harrison St, 11a – 1:30p","Downtown Seattle
-4th Ave and Pine St, 11:30a – 2p","Tacoma
-Tacoma Broadway Farmers Market, 10:30a – 3p","Downtown Seattle
-4th Ave and Pine St, 11:30a – 2p"
-"Six Coins Japanese Food truck","http://www.seattlefoodtruck.com/index.php/trucks/six-coins-japanese-food-truck/","Japanese","Cash or Cards","Sushi, salad, and bento boxes","null","South Lake Union
-1370 Stewart St, corner of Stewart and John, near REI, 11a – 2p","null","Bellevue
-11911 NE 1st St., Eastridge Corporate Center, enter the parking lot, go uphill and we’re on the right, 11a – 2p","null"
-"Wicked Pies","http://www.seattlefoodtruck.com/index.php/trucks/wicked-pies/","Pizza","Cash or Cards","Pizza & Gelato + Focaccia Sandwiches & Salads. Our menu is made with nothing but the best of Mother Nature’s finest. All products are made with natural, organic, and GMO free ingredients, with a hint of Twin Peaks","null","South Lake Union
-860 Terry Ave N, South Lake Union Park, 11a – 3p","South Lake Union
-860 Terry Ave N, South Lake Union Park, 11a – 3p","South Lake Union
-860 Terry Ave N, South Lake Union Park, 11a – 3p","South Lake Union
-860 Terry Ave N, South Lake Union Park, 11a – 3p"
-"Kiss My Grits","http://www.seattlefoodtruck.com/index.php/trucks/kiss-my-grits/","null","null","null","null","null","South Lake Union
-1415 Dexter Ave, 11a – 2p","Ballard
-Stoup Brewing, 1108 NW 52nd St, 5p – 8p","Georgetown
-6100 4th Ave S, Pacific Market Center, 11a – 2p"
-"Yumbit Food Truck","http://www.seattlefoodtruck.com/index.php/trucks/yumbit-food-truck/","Taiwanese Bento","Cash or Cards","Yumbit Food Truck offers the authentic Taiwanese Bento, appetizers, fresh fruit juice, and many other Asian desserts, side dishes, etc.","South Lake Union
-2000 9th Ave, 11a – 2p","Bellevue
-400 108th Ave NE, 11a – 2p","South Lake Union
-2000 9th Ave, 11a – 2p","Bellevue
-10855 NE 8th St, 11a – 2p","null"
-"Chewaya Authentic Moroccan Sandwiches","http://www.seattlefoodtruck.com/index.php/trucks/chewaya-authen%E2%80%A6can-sandwiches/","null","null","null","null","null","null","null","null"
-"Narwhal","http://www.seattlefoodtruck.com/index.php/trucks/narwhal/","Seafood","Cash or Cards","A mobile extension of everything you know and love about The Walrus and the Carpenter and The Whale Wins.","null","null","null","South Lake Union
-2100 Westlake Ave, parking lot pod, 11a – 2p","null"
-"Hallava Falafel","http://www.seattlefoodtruck.com/index.php/trucks/hallava-falafel/","Mediterranean","Cash or Cards","Falafel and shwarma sandwiches","Georgetown
-5825 Airport Way S, 11a – 3p","Georgetown
-5825 Airport Way S, 11a – 3p","Georgetown
-5825 Airport Way S, 11a – 3p","Georgetown
-5825 Airport Way S, 11a – 3p","Georgetown
-5825 Airport Way S, 11a – 3p"
-"Bing of Fire","http://www.seattlefoodtruck.com/index.php/trucks/bing-of-fire/","Chinese crepes","Cash or Cards","Chinese crepes, also known at jianbing are a delicious traditional Chinese street snack.","null","University District
-1536 NE 47th St, 11a – 2p","null","South Lake Union
-Boren Ave N and Harrison St, SLU Pods, 11a – 2p","Downtown Seattle
-401 Pine St, Westlake Park, 11a – 2p"
-"I Love My GFF","http://www.seattlefoodtruck.com/index.php/trucks/i-love-my-gff/","Gluten-Free / Vegetarian","Cash or Cards","Healthy Food With Street Smarts. We serve up sprouted organic quinoa bowls loaded with layers of tangy sauces, veggies, and spice rubbed Draper Valley chicken. It’s mostly organic and 100% gluten free. Vegan options are available.","First Hill
-1000 Minor Ave, 11a – 2p","South Lake Union
-1016 Republican St, 11a – 2p","South Lake Union
-1016 Republican St, 11a – 2p","South Lake Union
-1016 Republican St, 11a – 2p","SoDo
-2401 Utah Ave S, Starbucks HQ, 11a – 2p"
-"Snout & Co.","http://www.seattlefoodtruck.com/index.php/trucks/snout-co/","Cuban","Cash or Cards","Cubans, rice and beans, tostones – Soul food from Cuba to South Carolina, just like grandma used to make.","Bellevue
-106th Ave NE and NE 6th St, 11a – 2p","null","Queen Anne
-101 Elliot Ave W, PI Building, 11a – 2p","Bellevue
-106th Ave NE and NE 6th St, 11a – 2p","South Lake Union
-2100 Westlake Ave, parking lot pod, 11a – 2p"
-"Buddha Bruddah","http://www.seattlefoodtruck.com/index.php/trucks/buddha-bruddah/","Asian","Cash or Cards","Gourmet Asian mixed plates","South Lake Union
-Corner of Westlake and Harrison, 11a – 2p","South Lake Union
-964 Republican St, 11a – 2p","Downtown Seattle
-McGraw Park, 5th Ave and Stewart St, 11a – 2p","South Lake Union
-219 Terry Ave N, 11a – 2p","South Lake Union
-Corner of Westlake Ave and Harrison St, 11a – 2p"
-"Kaosamai Thai Cook Truck","http://www.seattlefoodtruck.com/index.php/trucks/kaosamai-thai-cook-truck/","Thai","Cash only","Phad Thai, noodles, fried rice and curries","South Lake Union
-Boren Ave N and Harrison St, SLU Pods, 11a – 2p","South Lake Union
-Westlake Ave N and John St, 11a – 2p","SoDo
-2401 Utah Ave S, Starbucks HQ, 11a – 2p","null","South Lake Union
-Westlake Ave N and John St, 11a – 2p"
-"Jemil’s Big Easy","http://www.seattlefoodtruck.com/index.php/trucks/jemils-big-easy/","Cajun / Creole","Cash or Cards","Down home cajun soul food","South Lake Union
-Terry Ave N and Republican St, 11a – 2p","Downtown Seattle
-7th Ave and Pine St, 11a – 2p","South Lake Union
-8th Ave N and Republican St, 11a – 2p","null","South Lake Union
-2100 Westlake Ave, parking lot pod, 11a – 2p"
-"Bake My Day","http://www.seattlefoodtruck.com/index.php/trucks/bake-my-day/","Sweets","Cash or Cards","Serving up delicious whoopie pies, cakes, pies, bars, brownies, truffles, and cookies from Bertha Mae, our bakery-on-wheels!","null","null","South Lake Union
-1250 Denny Way, ALL RISE, 11a – 2p","Bellevue
-106th Ave NE and NE 6th St, 11a – 2p","null"
-"Tat’s Truck","http://www.seattlefoodtruck.com/index.php/trucks/tats-truck/","Sandwiches","Cash or Cards","East Coast style deli sandwiches","South Lake Union
-Terry Ave N and Thomas St, 10:30a – 2p","Bellevue
-Alternating between Toys-R-Us in Bellevue AND T-Mobile HQ in Factoria (see tatstruck.com for current location), 10:30a – 2p","South Lake Union
-Terry Ave N and Thomas St, 10:30a – 2p","Downtown Seattle
-5th and Union, 10:30a – 2p","SoDo
-2401 Utah Ave S, Starbucks HQ, 10:30a – 2p"
-"314 PIE","http://www.seattlefoodtruck.com/index.php/trucks/314-pie/","Sweet and Savory Pies","Cash or Cards","We love pies – sweet and savory. We serve them up to the hungry people in Seattle in our fabulous food truck.","SoDO
-2401 Utah Ave S, Starbucks HQ, 11a – 2p","null","South Lake Union
-333 Boren Ave N, 11a – 2p","South Lake Union
-Boren Ave N and Republican St, 11a – 2p","null"
-"Motofish Coffee","http://www.seattlefoodtruck.com/index.php/trucks/motofish-coffee/","Coffee / espresso / baked goods","Cash or cards","Serving fresh brewed coffee and espresso in and around the Seattle area.","null","South Lake Union
-Boren Ave N and Harrison St, SLU Pods, 11a – 2p","null","null","null"
-"Here and There Grill","http://www.seattlefoodtruck.com/index.php/trucks/here-and-there-grill/","Sandwiches","Cash or Cards","Hearty sandwiches, salads and soups","null","South Lake Union
-2100 Westlake Ave, parking lot pod, 11a – 2p","Edmonds
-4th Ave and Dayton St, 11a – 7p","null","Edmonds
-American Brewing Co, 5p – 8p"
+number,trucks,website,food_type,payment,twitter
+3,Falafel Salam,http://www.seattlefoodtruck.com/index.php/trucks/falafel-salam/,Middle Eastern,Unknown,https://twitter.com/FalafelSalam
+4,BUNS,http://www.seattlefoodtruck.com/index.php/trucks/buns/,Burgers,Cash or Cards,https://twitter.com/BunsOnWheels
+5,Napkin Friends,http://www.seattlefoodtruck.com/index.php/trucks/napkin-friends/,Jewish,Cash or Cards,http://www.twitter.com/napkinfriends
+6,Hot Dog King,http://www.seattlefoodtruck.com/index.php/trucks/hot-dog-king/,Hot Dogs,Cash or Cards,
+7,Xplosive Truck,http://www.seattlefoodtruck.com/index.php/trucks/xplosive-truck/,Filipino-Vietnamese Fusion,Cash Only,https://twitter.com/XplosiveFoodTrk
+8,ThaiUUp,http://www.seattlefoodtruck.com/index.php/trucks/thaiuup/,Thai,Cash Only,https://twitter.com/thaiuup
+9,Raney Brothers BBQ,http://www.seattlefoodtruck.com/index.php/trucks/raney-brothers-bbq/,BBQ,Cash or Cards,https://twitter.com/RBBBQnet
+10,Hallava Falafel,http://www.seattlefoodtruck.com/index.php/trucks/hallava-falafel/,Mediterranean,Cash or Cards,https://twitter.com/seattle_falafel
+11,Off the Rez,http://www.seattlefoodtruck.com/index.php/trucks/off-the-rez/,Native American,Cash or Cards,https://twitter.com/OffTheRezTruck
+12,Wicked Pies,http://www.seattlefoodtruck.com/index.php/trucks/wicked-pies/,Pizza,Cash or Cards,https://twitter.com/wicked_pies
+13,Motofish Coffee,http://www.seattlefoodtruck.com/index.php/trucks/motofish-coffee/,Coffee / espresso / baked goods,Cash or cards,https://twitter.com/MotofishCoffee
+14,Spice on Curve,http://www.seattlefoodtruck.com/index.php/trucks/spice-on-curve/,null,null,null
+15,POP UP,http://www.seattlefoodtruck.com/index.php/trucks/pop-up/,Sweets,Cards Only,https://twitter.com/PopUpBikePops
+16,Narwhal,http://www.seattlefoodtruck.com/index.php/trucks/narwhal/,Seafood,Cash or Cards,https://twitter.com/narwhaltruck
+17,314 PIE,http://www.seattlefoodtruck.com/index.php/trucks/314-pie/,Sweet and Savory Pies,Cash or Cards,https://twitter.com/314PIESeattle
+18,Yumbit Food Truck,http://www.seattlefoodtruck.com/index.php/trucks/yumbit-food-truck/,Taiwanese Bento,Cash or Cards,
+19,Buddha Bruddah,http://www.seattlefoodtruck.com/index.php/trucks/buddha-bruddah/,Asian,Cash or Cards,
+20,Chewaya Authentic Moroccan Sandwiches,http://www.seattlefoodtruck.com/index.php/trucks/chewaya-authen%E2%80%A6can-sandwiches/,null,null,null
+21,Tat’s Truck,http://www.seattlefoodtruck.com/index.php/trucks/tats-truck/,Sandwiches,Cash or Cards,https://twitter.com/tatstruck
+22,Jemil’s Big Easy,http://www.seattlefoodtruck.com/index.php/trucks/jemils-big-easy/,Cajun / Creole,Cash or Cards,https://twitter.com/JemilsBigEasy
+23,Lumpia World,http://www.seattlefoodtruck.com/index.php/trucks/lumpia-world/,Filipino,Cash or Cards,https://twitter.com/LumpiaWorld
+24,Saffron Spice,http://www.seattlefoodtruck.com/index.php/trucks/saffron-spice/,Indian,Cash or Cards,
+25,I Love My GFF,http://www.seattlefoodtruck.com/index.php/trucks/i-love-my-gff/,Gluten-Free / Vegetarian,Cash or Cards,https://twitter.com/healthyfoodcart
+26,Bake My Day,http://www.seattlefoodtruck.com/index.php/trucks/bake-my-day/,Sweets,Cash or Cards,https://twitter.com/BMDSeattle
+27,Djung on Wheels,http://www.seattlefoodtruck.com/index.php/trucks/djung-on-wheels/,Thai,Unknown,
+28,Tacos el Tajin,http://www.seattlefoodtruck.com/index.php/trucks/tacos-el-tajin/,Mexican,Cash or Cards,
+29,Peasant Food Manifesto,http://www.seattlefoodtruck.com/index.php/trucks/peasant-food-manifesto,Global Fusion,Cash or Cards,https://twitter.com/EatLikeAPeasant
+30,Chopstix,http://www.seattlefoodtruck.com/index.php/trucks/chopstix/,Asian Fusion,Cash or Cards,https://twitter.com/ChopstixMobile
+31,Fusion on the Run,http://www.seattlefoodtruck.com/index.php/trucks/fusion-on-the-run/,Sandwiches,Cash or Cards,https://twitter.com/fusionontherun
+32,Papa Bois,http://www.seattlefoodtruck.com/index.php/trucks/papa-bois/,Caribbean Fusion,Unknown,https://twitter.com/PapaBois_Food
+33,Cheese Wizards,http://www.seattlefoodtruck.com/index.php/trucks/cheese-wizards/,Sandwiches,Cash, Cards, or Level Up,https://twitter.com/CheeseWizards
+34,Six Coins Japanese Food truck,http://www.seattlefoodtruck.com/index.php/trucks/six-coins-japanese-food-truck/,Japanese,Cash or Cards,https://twitter.com/sixcoinsmobile
+35,NaanSense,http://www.seattlefoodtruck.com/index.php/trucks/naansense/,Indian,Cash or Cards,https://twitter.com/NaanSenseMobile
+36,NOSH,http://www.seattlefoodtruck.com/index.php/trucks/nosh/,British,Cash or Cards,https://twitter.com/noshthetruck
+37,Snout & Co.,http://www.seattlefoodtruck.com/index.php/trucks/snout-co/,Cuban,Cash or Cards,https://twitter.com/SnoutAndCo
+38,Caravan Crêpes,http://www.seattlefoodtruck.com/index.php/trucks/caravan-crepes/,French,Cash or Cards,https://twitter.com/caravanseattle
+39,Charlie’s,http://www.seattlefoodtruck.com/index.php/trucks/charlies/,Burgers / Cheesesteaks,Cash or Cards,https://twitter.com/CharliesBuns
+40,Kaosamai Thai Cook Truck,http://www.seattlefoodtruck.com/index.php/trucks/kaosamai-thai-cook-truck/,Thai,Cash only,https://twitter.com/Thaifoodtruck
+41,Poke to the Max,http://www.seattlefoodtruck.com/index.php/trucks/poke-to-the-max/,Poke / Hawaiian,Cash or Cards,https://twitter.com/Samchoyspoke
+42,Fez,http://www.seattlefoodtruck.com/index.php/trucks/fez/,Mediterranean,Cash or cards,https://twitter.com/fezonwheels
+43,Bing of Fire,http://www.seattlefoodtruck.com/index.php/trucks/bing-of-fire/,Chinese crepes,Cash or Cards,https://twitter.com/BingofFire
+44,Plum Vegan Burgers and More,http://www.seattlefoodtruck.com/index.php/trucks/plum-vegan-burgers-more/,Vegan burgers sandwiches salads,Cash or Cards,https://twitter.com/Plumbistro
+45,Kiss My Grits,http://www.seattlefoodtruck.com/index.php/trucks/kiss-my-grits/,null,null,null
+46,Here and There Grill,http://www.seattlefoodtruck.com/index.php/trucks/here-and-there-grill/,Sandwiches,Cash or Cards,https://twitter.com/heretheregrill
+47,Hungry Me,http://www.seattlefoodtruck.com/index.php/trucks/hungry-me/,Mixed East Asian,Cash or Cards,https://twitter.com/HungryMeSeattle
+48,Now Make Me A Sandwich,http://www.seattlefoodtruck.com/index.php/trucks/now-make-me-a-sandwich/,Sandwiches,Cash or Cards,https://twitter.com/me_sandwich
+49,Seattle Cookie Counter,http://www.seattlefoodtruck.com/index.php/trucks/cookie-counter/,Sweets,Cash or Cards,https://twitter.com/seattlecookie
+50,Chick’n Fix,http://www.seattlefoodtruck.com/index.php/trucks/chickn-fix/,American / Filipino,Cash or Cards,https://twitter.com/Chicknfix
