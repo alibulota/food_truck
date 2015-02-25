@@ -1,0 +1,57 @@
+{% extends 'base.jinja2' %}
+
+{% block nav %}
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="/tructionary">The Tructionary</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Search by Neighborhood <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/neighborhood/slu">SLU</a></li>
+                <li><a href="/neighborhood/downtown">Downtown</a></li>
+                <li><a href="/neighborhood/ballard">Ballard</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Search by Cuisine <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/cuisine/american">American</a></li>
+                <li><a href="/cuisine/asian">Asian</a></li>
+                <li><a href="/cuisine/bbq">BBQ</a></li>
+                <li><a href="/cuisine/intl">International</a></li>
+                <li><a href="/cuisine/medi">Mediterranean</a></li>
+                <li><a href="/cuisine/mex">Mexican</a></li>
+                <li><a href="/cuisine/sweets">Sweets</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+{% endblock %}
+
+
+{% block body %}
+    <div class="container theme-showcase" role="main">
+      <div class="jumbotron">
+        <h1>Tructionary <small style="color: darkgray"><i>noun</i></small></h1>
+        <p style="margin-left: 10%">a massive directory of food trucks for your eating pleasure</p>
+<!--         <img class="dino-img" src="../static/img/dinotruck.png" alt="the dine-o-truck dino!" align="center"> -->
+      </div>
+      <div class="truck_detail">
+      <h1>{{ truck.name }}</h1>
+      <ul class="truck_detail">
+        <li>Cuisine: {{ truck.cuisine }}</li>
+         {% for neighborhood in truck.location %}
+        <li>Where its at: {{ neighborhood }}</li>
+        {% else %}
+        <p><em>No locations in database</em></p>
+        {% endfor %}
+        <li>Accepted Payment: {{ truck.payment }}</li>
+        <li>Website: <a href="{{ truck.website }}">{{ truck.website }}</a></li>
+      </ul>
+      </div>
+        
+      
+  
+    </div> <!-- /container -->
+{% endblock %}
