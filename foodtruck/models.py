@@ -49,6 +49,22 @@ class Truck(Base):
                         twitter=twitter, website=website)
         DBSession.add(new_entry)
 
+    @classmethod
+    def edit_truck(cls, request):
+        id = request.matchdict.get('id', None)
+        name = request.params.get('name', None)
+        cuisine = request.params.get('cuisine', None)
+        payment = request.params.get('payment', None)
+        twitter = request.params.get('twitter', None)
+        website = request.params.get('website', None)
+        DBSession.query(cls).filter(cls.id == id).update({
+            "name": name,
+            "cuisine": cuisine,
+            "payment": payment,
+            "twitter": twitter,
+            "website": website
+            })
+
 
 class Locations(Base):
     __tablename__ = 'locations'

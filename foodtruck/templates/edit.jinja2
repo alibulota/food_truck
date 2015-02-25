@@ -34,7 +34,7 @@
   <div class="container">
     <a href="/admin"><span class="glyphicon glyphicon-arrow-left"></span>  Back to dashboard</a>
     <h2>Edit Truck: {{ truck.name }}</h2>
-    <form action="" method="POST">
+    <form action="{{ request.route_url('edit', id=truck.id) }}" method="POST">
       <div>
         <label for="name">Truck Name</label>
         <input type="text" name="name" id="name" value="{{truck.name}}"/>

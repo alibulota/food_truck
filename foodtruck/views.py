@@ -120,12 +120,19 @@ def admin(request):
 @view_config(route_name='edit', renderer='templates/edit.jinja2')
 def edit(request):
     if request.authenticated_userid:
-        try:
-            id = request.matchdict.get('id', None)
-            truck = Truck.by_id(id)
-        except DBAPIError:
-            return HTTPInternalServerError
-        return {'truck': truck}
+        if request.method == 'GET':
+            try:
+                id = request.matchdict.get('id', None)
+                truck = Truck.by_id(id)
+            except DBAPIError:
+                return HTTPInternalServerError
+            return {'truck': truck}
+        elif request.method == 'POST':
+            try:
+                Truck.edit_truck(request)
+            except DBAPIError:
+                return HTTPInternalServerError
+            return HTTPFound(request.route_url('admin'))
     else:
         return HTTPForbidden()
 
