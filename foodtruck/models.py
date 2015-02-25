@@ -24,7 +24,7 @@ class Truck(Base):
     __tablename__ = 'trucks'
     id = Column(Integer, primary_key=True)
     name = Column(Text, nullable=False, unique=True)
-    location = relationship('Locations')
+    locations = relationship('Locations')
     cuisine = Column(Text)
     payment = Column(Text)
     twitter = Column(Text)

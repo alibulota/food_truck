@@ -62,7 +62,7 @@
     </br>
     <h4>Neighborhoods for {{ truck.name }}:</h4>
     <ul>
-    {% for neighborhood in truck.location %}
+    {% for neighborhood in truck.locations %}
       <li>{{ neighborhood }}</li>
     {% else %}
     <p><em>No locations in database</em></p>
