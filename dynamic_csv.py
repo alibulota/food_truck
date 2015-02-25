@@ -3,7 +3,7 @@
 
 import psycopg2
 import sys
-
+import csv
 
 con_string =  "dbname='food_truck' user='aabulota' password='dinotruck'"
 
@@ -15,7 +15,7 @@ try:
     cur = con.cursor()
     cur.execute("DROP TABLE IF EXISTS locations")
 
-cur.execute("CREATE TABLE locations (id INT NOT NULL PRIMARY KEY, truck_id INT FOREIGN KEY REFERENCES trucks(id), day TEXT, start_time TIME, end_time TIME, address TEXT, neighborhood TEXT)")
+cur.execute("CREATE TABLE locations (id SERIAL PRIMARY KEY, truck_id INT FOREIGN KEY REFERENCES trucks(id), day TEXT, start_time TIME WITHOUT TIME ZONE, end_time TIME WITHOUT TIME ZONE, address TEXT, neighborhood TEXT)")
 
 except:
     print "Unable to connect to database"
