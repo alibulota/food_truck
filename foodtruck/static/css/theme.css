@@ -16,9 +16,9 @@ body {
   margin-bottom: 20px;
 }
 
-.theme-showcase > p > .btn {
+/*.theme-showcase > p > .btn {
   margin: 5px 0;
-}
+}*/
 
 .theme-showcase .navbar .container {
   width: auto;
@@ -34,10 +34,11 @@ body {
   font-size: 60%;
   text-align: center;
 }
-.page-header {
+
+/*.page-header {
   float:left;
-  width: 60%;
-}
+  width: auto;
+}*/
 
 .tructionary {
   list-style: none;
@@ -61,7 +62,7 @@ body {
 
 .twitter_widget {
   float: right;
-  width: 30%;
+  width: 40%;
 }
 
 
