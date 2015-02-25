@@ -98,7 +98,13 @@
       <h4>Neighborhoods for {{ truck.name }}:</h4>
       <ul>
       {% for location in truck.locations %}
-        <li>{{ location.day }} in {{ location.neighborhood }}</li>
+        <li>
+        {{ location.day }} in {{ location.neighborhood }}</br>
+        {{ location.start_time.strftime("%I:%M %p") }}-{{ location.end_time.strftime("%I:%M %p") }}</br>
+        {{ location.address }}
+        <form action="{{ request.route_url('del_location', id=location.id) }}" method="POST">
+        <input type="submit" name="add" value="Delete"/></form>
+        </li>
       {% else %}
         <p><em>No locations in database</em></p>
       {% endfor %}

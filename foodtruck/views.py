@@ -138,6 +138,18 @@ def add_location(request):
         return HTTPForbidden()
 
 
+@view_config(route_name='del_location', request_method='POST')
+def del_location(request):
+    if request.authenticated_userid:
+        try:
+            Locations.del_location(request)
+            return HTTPFound(request.route_url('admin'))
+        except DBAPIError:
+            return HTTPInternalServerError
+    else:
+        return HTTPForbidden()
+
+
 @view_config(route_name='admin', renderer='templates/admin.jinja2')
 def admin(request):
     if request.authenticated_userid:

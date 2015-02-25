@@ -99,5 +99,11 @@ class Locations(Base):
                            neighborhood=neighborhood)
         DBSession.add(new_location)
 
+    @classmethod
+    def del_location(cls, request):
+        id = request.matchdict.get('id', None)
+        old_location = DBSession.query(cls).filter(cls.id == id).one()
+        DBSession.delete(old_location)
+
 
 Index('truck_index', Truck.name, unique=True, mysql_length=255)

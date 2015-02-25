@@ -42,7 +42,7 @@
         <ul class="truck_detail">
           <li>Cuisine: {{ truck.cuisine }}</li>
           {% for location in truck.locations %}
-            <li>Parked: <b>{{ location.day }}</b> in <b>{{ location.neighborhood }}</b> from {{ location.start_time }} to {{ location.end_time }}</br>
+            <li>Parked: <b>{{ location.day }}</b> in <b>{{ location.neighborhood }}</b> from {{ location.start_time.strftime("%I:%M %p") }} to {{ location.end_time.strftime("%I:%M %p") }}</br>
             <em>{{ location.address }}</em></li>
           {% else %}
             <p><em>No locations in database</em></p>
