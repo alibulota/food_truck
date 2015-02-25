@@ -33,9 +33,23 @@
 {% block body %}
     <div class="container theme-showcase" role="main">
       <div class="jumbotron">
-        <h1>{{ cuisine }}</h1>
-        <p>This is the cuisine view</p>
-        <img class="dino-img" src="../static/img/dinotruck.png" alt="the dine-o-truck dino!" align="center">
+        <h1>{{ cuisine_type }}</h1>
+        <p>Mmmmm... {{ cuisine_type }} sounds yummy!</p>
+        <img class="dino-img" src="/static/img/dinotruck.png" alt="the dine-o-truck dino!" align="center">
       </div>
+
+      <div class="page-header">
+        <h1>The Trucks</h1>
+        <ul class="tructionary">
+        {% for truck in cuisine %}
+          <a href="/tructionary/{{ truck.id }}">
+          <li><small>ID: {{ truck.id }}</small> | Name: {{ truck.name }} | <small>Cuisine: {{ truck.cuisine }}</small></li>
+          </a>
+        {% else %}
+        <p><em>Uh oh!</em> Our dino must have eaten these trucks... Come back later when we've added more!</p>
+        {% endfor %}
+        </ul>
+      </div>
+
     </div> <!-- /container -->
 {% endblock %}
