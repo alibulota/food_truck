@@ -15,7 +15,7 @@ def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
     """
     settings['sqlalchemy.url'] = os.environ.get(
-        'DATABASE_URL', 'postgresql://jwarren:@localhost:5432/food_truck')
+        'DATABASE_URL', 'postgresql://jakeanderson:@localhost:5432/food_truck')
 
     manager = BCRYPTPasswordManager()
     settings['auth.username'] = os.environ.get('AUTH_USERNAME', 'admin')
