@@ -11,7 +11,7 @@ def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
     """
     settings['sqlalchemy.url'] = os.environ.get(
-        'DATABASE_URL', 'postgresql://jwarren:@localhost:5432/food_truck')
+        'DATABASE_URL', 'postgresql://aabulota:@localhost:5432/food_truck')
     engine = engine_from_config(settings, 'sqlalchemy.')
     DBSession.configure(bind=engine)
     Base.metadata.bind = engine
