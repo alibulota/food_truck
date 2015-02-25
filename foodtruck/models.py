@@ -86,5 +86,18 @@ class Locations(Base):
     def __repr__(self):
         return self.neighborhood
 
+    @classmethod
+    def add_location(cls, request):
+        truck_id = request.matchdict.get('id', None)
+        day = request.params.get('day', None)
+        start_time = request.params.get('start_time', None)
+        end_time = request.params.get('end_time', None)
+        address = request.params.get('address', None)
+        neighborhood = request.params.get('neighborhood', None)
+        new_location = cls(truck_id=truck_id, day=day, start_time=start_time,
+                           end_time=end_time, address=address,
+                           neighborhood=neighborhood)
+        DBSession.add(new_location)
+
 
 Index('truck_index', Truck.name, unique=True, mysql_length=255)

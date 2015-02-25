@@ -20,9 +20,9 @@ body {
   margin: 5px 0;
 }*/
 
-.theme-showcase .navbar .container {
+/*.theme-showcase .navbar .container {
   width: auto;
-}
+}*/
 
 .footer-hr {
   color: gray;
@@ -57,12 +57,24 @@ body {
 
 .truck_detail ul {
   padding: 10px;
+}
 
+.truck_form {
+  display: block;
+  float: left;
+  margin-right: 3%;
 }
 
 .twitter_widget {
   float: right;
-  width: 40%;
+  width: 35%;
 }
 
-
+label {
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 110px;
+    text-align: right;
+    margin-right: 3px;
+}

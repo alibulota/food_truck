@@ -55,5 +55,7 @@ def main(global_config, **settings):
     config.add_route('add', '/admin/add')
     config.add_route('admin', '/admin')
     config.add_route('edit', 'admin/edit/{id:\d+}')
+    config.add_route('add_location', 'admin/add_location/{id:\d+}')
+    config.add_route('del_location', 'admin/del_location/{id:\d+}')
     config.scan()
     return config.make_wsgi_app()

@@ -7,6 +7,7 @@ from cryptacular.bcrypt import BCRYPTPasswordManager
 from .models import (
     DBSession,
     Truck,
+    Locations,
     )
 
 
@@ -118,6 +119,18 @@ def add_truck(request):
     if request.authenticated_userid:
         try:
             Truck.add_truck(request)
+            return HTTPFound(request.route_url('admin'))
+        except DBAPIError:
+            return HTTPInternalServerError
+    else:
+        return HTTPForbidden()
+
+
+@view_config(route_name='add_location', request_method='POST')
+def add_location(request):
+    if request.authenticated_userid:
+        try:
+            Locations.add_location(request)
             return HTTPFound(request.route_url('admin'))
         except DBAPIError:
             return HTTPInternalServerError
