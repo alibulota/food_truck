@@ -17,7 +17,7 @@ try:
     cur.execute("DROP TABLE IF EXISTS trucks")
     # Make sure to check if the table exists - what we really want to do is ONLY create it if it doesn't exist
     # Maybe verify the schema if it already exists against what we expect?
-    cur.execute("CREATE TABLE trucks (truck_name TEXT PRIMARY KEY, website TEXT, food_type TEXT, payment TEXT, twitter TEXT)")
+    cur.execute("CREATE TABLE trucks (ID INT NOT NULL PRIMARY KEY, truck_name TEXT, website TEXT, food_type TEXT, payment TEXT, twitter TEXT)")
 
 except:
     print "Unable to connect to database"
