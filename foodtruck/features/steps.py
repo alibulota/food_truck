@@ -93,10 +93,48 @@ def where_are_the_trucks(step):
 
 @step('When I click on the link The Trucktionary')
 def list_trucks(step):
-    
+
     world.food = string(trucks)
 
 
 @step('Then I see the list of trucks')
 def show_me_the_trucks(step):
     world.food = trucks(links)
+
+
+@steps('Given that I am on the Home')
+def home_neighborhood(step):
+    pass
+
+@steps('When I click on the link Search by Neighborhood')
+def link_neighborhood(step):
+    pass
+
+@steps('Then I see the trucks in that neighborhood')
+def see_neighborhood(step):
+    pass
+
+@steps('Given that I am on the Home')
+def home_cuisine(steps):
+    pass
+
+@steps('When I click on the link Search by Cuisine')
+def link_cuisine(steps):
+    pass
+
+@steps('Then I will see trucks with that kind of food')
+def see_cuisine(steps):
+    pass
+
+@steps('Given that I am on The Trucktionary')
+def home_trucktionary(steps):
+    pass
+
+@steps('When I click on the link The Yeast Whisper')
+def link_trucktionary(steps):
+    pass
+
+@steps('Then I will see that trucks info')
+def see_trucktionary(steps):
+    pass
+
