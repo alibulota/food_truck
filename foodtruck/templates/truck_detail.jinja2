@@ -37,17 +37,18 @@
         <p style="margin-left: 10%">a massive directory of food trucks for your eating pleasure</p>
 <!--         <img class="dino-img" src="../static/img/dinotruck.png" alt="the dine-o-truck dino!" align="center"> -->
       </div>
-      <div class="truck_detail">
+      <div class="truck_detail_header">
       <h1>{{ truck.name }}</h1>
       <ul class="truck_detail">
-        <li>Cuisine: {{ truck.cuisine }}</li>
+        <li><em>{{ truck.cuisine }}</em></li>
          {% for neighborhood in truck.location %}
-        <li>Where its at: {{ neighborhood }}</li>
+        <li>Chillin' by: {{ neighborhood }}</li>
         {% else %}
         <p><em>No locations in database</em></p>
         {% endfor %}
-        <li>Accepted Payment: {{ truck.payment }}</li>
-        <li>Website: <a href="{{ truck.website }}">{{ truck.website }}</a></li>
+        <li>{{ truck.payment }}</li>
+        <li><a href="{{ truck.website }}">{{ truck.website }}</a></li>
+        <li><a href="{{ truck.twitter }}">{{ truck.twitter }}</a></li>
       </ul>
       </div>
         
