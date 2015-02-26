@@ -36,7 +36,7 @@
     <form action="{{ request.route_url('add') }}" method="POST">
       <div>
         <label for="name">Truck Name</label>
-        <input type="text" name="name" id="name"/>
+        <input type="text" name="name" id="name" required/>
       </div>
       <div>
         <label for="cuisine">Cuisine</label>
@@ -44,7 +44,7 @@
       </div>
       <div>
         <label for="cuisine_sort">Sort cuisine</label>
-        <input type="text" name="cuisine_sort" id="cuisine_sort"/>
+        <input type="text" name="cuisine_sort" id="cuisine_sort" required/>
       </div>
       <div>
         <label for="payment">Payment</label>
@@ -52,11 +52,11 @@
       </div>
       <div>
         <label for="twitter">Twitter address</label>
-        <input type="text" name="twitter" id="twitter"/>
+        <input type="url" name="twitter" id="twitter"/>
       </div>
       <div>
         <label for="website">Web address</label>
-        <input type="text" name="website" id="website"/>
+        <input type="url" name="website" id="website"/>
       </div>
       <div>
         <input type="submit" name="add" value="Truck It!"/>
