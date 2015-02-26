@@ -23,7 +23,7 @@ class Truck(Base):
     __tablename__ = 'trucks'
     id = Column(Integer, primary_key=True)
     name = Column(Text, nullable=False, unique=True)
-    locations = relationship('Locations')
+    locations = relationship('Locations', backref='truck')
     cuisine = Column(Text)
     payment = Column(Text)
     twitter = Column(Text)
@@ -103,6 +103,11 @@ class Locations(Base):
         id = request.matchdict.get('id', None)
         old_location = DBSession.query(cls).filter(cls.id == id).one()
         DBSession.delete(old_location)
+
+    @classmethod
+    def by_neighborhood(cls, neighborhood):
+        return DBSession.query(cls).filter(
+            cls.neighborhood == neighborhood).order_by(cls.day).all()
 
 
 Index('truck_index', Truck.name, unique=True, mysql_length=255)

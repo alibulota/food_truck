@@ -1,14 +1,14 @@
 from pyramid.response import Response
 from pyramid.view import view_config
-from pyramid.httpexceptions import HTTPFound, HTTPForbidden, HTTPInternalServerError
+from pyramid.httpexceptions import (
+    HTTPFound, HTTPForbidden, HTTPInternalServerError)
 from sqlalchemy.exc import DBAPIError
 from pyramid.security import remember, forget
 from cryptacular.bcrypt import BCRYPTPasswordManager
 from .models import (
     DBSession,
     Truck,
-    Locations,
-    )
+    Locations)
 
 
 cuisine_dict = {
@@ -60,7 +60,9 @@ def truck_detail(request):
 def neighborhood(request):
     neighborhood_ = request.matchdict.get('neighborhood', None)
     neighborhood_name = neighborhood_dict[neighborhood_]
-    return {'neighborhood_name': neighborhood_name}
+    neighborhood = Locations.by_neighborhood(neighborhood_name)
+    return {'neighborhood_name': neighborhood_name,
+            'neighborhood': neighborhood}
 
 
 @view_config(route_name='cuisine', renderer='templates/cuisine.jinja2')
