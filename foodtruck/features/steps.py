@@ -114,7 +114,7 @@ def home_neighborhood(step):
 @steps('When I click on the link Search by Neighborhood')
 def link_neighborhood(step):
     '''Go to neighborhood page'''
-    assert 'class="dropdown open"' in world.truck.neighborhood
+    assert 'class="dropdown open"' in world.truck.home
 
 
 @steps('Then I see the trucks in that neighborhood')
@@ -131,30 +131,30 @@ def home_cuisine(steps):
 @steps('When I click on the link Search by Cuisine')
 def link_cuisine(steps):
     '''Go to cuisine page'''
-    pass
+    assert 'class="dropdown open"' in world.truck.home
 
 
 @steps('Then I will see trucks with that kind of food')
 def see_cuisine(steps):
     '''List all trucks by cuisine'''
-    pass
+    assert '<h1> American </h1>' in world.truck.cuisine
 
 
 @steps('Given that I am on The Trucktionary')
 def home_trucktionary(steps):
     '''Show page with all trucks listed'''
-    pass
+    assert '<h1> Tructionary </h1>' in world.truck.trucktionary
 
 
 @steps('When I click on the link The Yeast Whisper')
 def link_trucktionary(steps):
-    '''Show information with THe Yeast Whisperer Truck'''
-    pass
+    '''Show information with THe Yeast Whisper Truck'''
+    assert '<h1> The Yeast Whisper </h1>' in world.truck.trucktionary/1
 
 
 @steps('Then I will see that trucks info')
 def see_trucktionary(steps):
     '''Show truck info'''
-    pass
+    assert 'class="truck_detail"' in world.truck.trucktionary/1
 
 
