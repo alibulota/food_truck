@@ -57,6 +57,10 @@ body {
   text-align: center;
 }
 
+.cuisine-list {
+  text-align: center;
+}
+
 .theme-dropdown .dropdown-menu {
   position: static;
   display: block;
