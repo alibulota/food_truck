@@ -5,12 +5,25 @@ TEST_DSN = 'dbname=test_food_truck user=jakeanderson'
 settings = {'db': TEST_DSN}
 INPUT_BTN = '<input type="submit" name="add" value="Truck It!"/>'
 
+DB_SCHEMA = """
+CREATE A TABLE IF NOT EXISTS trucks (
+    id SERIAL PRIMARY KEY,
+    name TEXT,
+    website TEXT,
+    cuisine TEXT,
+    cuisine_sort TEXT,
+    payment TEXT,
+    twitter TEXT
+)
+"""
+
 
 @world.absorb
 def make_entry(step):
     entry_data = {'name': 'The Yeast Whisper',
                   'location': 'the corner of pine and 3rd',
-                  'food_type': 'American',
+                  'cuisine': 'American'
+                  'cuisine_sort': 'Burgers',
                   'payment': 'Cash',
                   'twitter': 'www.twitter.com/theyeastwhisperer',
                   'website': 'www.theyeastwhisperer.com'}
@@ -25,9 +38,9 @@ def login_helper(username, password, app):
     return app.post('/login', params=login_data, status='*')
 
 
-@world.absorb
+@before.each_scenario
 def init_db(scenerio):
-    with closing(connect_db(settings)) as bd:
+    with closing(connect_db(settings)) as db:
         db.curser().execute(world.DB_SCHEMA)
         db.commit()
 
@@ -43,7 +56,7 @@ def run_query(scenerio):
     return results
 
 
-@world.absorb
+@after.each_scenario
 def clear_db(scenario):
     with closing(connect_db(settings)) as db:
         db.cursor().execute("DROP TABLE entries")
@@ -51,24 +64,39 @@ def clear_db(scenario):
 
 
 @world.absorb
-def j
+def add_truck(app, name, cuisine, cuisine_sort, payment, twitter, website):
+    '''Create an entry in the database'''
+    expected = (name, cuisine, cuisine_sort, payment, twitter, website)
+    with closing(connect_db(settings)) as db:
 
-# @step('Dino homepage')
-# def get_home_page(step):
-#     response = world.app.get('/')
-#     assert response.status_code == 200
+# con_string =  "dbname='food_truck' user='aabulota'"
 
+# con = psycopg2.connect(con_string)
+# cursor = con.cursor()
 
-# @step('I want to know where the food is coming from')
-# def where_are_the_trucks(step):
-#     word.food = links(truck.trucktionary)
-
-
-# @step('I want a certain kind of food')
-# def what_kind_of_genres(step):
-#     world.food = string(trucks)
+# try:
+#     con = psycopg2.connect(con_string)
+#     cur = con.cursor()
+#     cur.execute("DROP TABLE IF EXISTS trucks")
 
 
-# @step('I want to contact the food truck')
-# def show_me_the_trucks(step):
-#     world.food = trucks(links)
+@step('Dino homepage')
+def get_home_page(step):
+    response = world.app.get('/')
+    assert response.status_code == 200
+
+
+@step('Given that I am on Home')
+def where_are_the_trucks(step):
+    world.food = links(truck.home)
+
+
+@step('When I click on the link The Trucktionary')
+def list_trucks(step):
+    
+    world.food = string(trucks)
+
+
+@step('Then I see the list of trucks')
+def show_me_the_trucks(step):
+    world.food = trucks(links)
