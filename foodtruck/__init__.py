@@ -5,6 +5,7 @@ from .models import (
     Base,
     )
 import os
+import jinja2
 from pyramid.session import SignedCookieSessionFactory
 from cryptacular.bcrypt import BCRYPTPasswordManager
 from pyramid.authentication import AuthTktAuthenticationPolicy
@@ -14,6 +15,7 @@ from pyramid.authorization import ACLAuthorizationPolicy
 def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
     """
+    jinja2.filters.FILTERS['googlemapify'] = googlemapify
     settings['sqlalchemy.url'] = os.environ.get(
         'DATABASE_URL', 'postgresql://jwarren:@localhost:5432/food_truck')
 
@@ -59,3 +61,9 @@ def main(global_config, **settings):
     config.add_route('del_location', 'admin/del_location/{id:\d+}')
     config.scan()
     return config.make_wsgi_app()
+
+
+def googlemapify(address):
+    slug = address.replace(' ', '+')
+    google = "http://www.google.com/maps/place/{}".format(slug)
+    return "<a href='{}' target='_blank'>{}</a>".format(google, address)

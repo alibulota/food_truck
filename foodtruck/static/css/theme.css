@@ -9,6 +9,10 @@ body {
   margin-top: 10px;
 }
 
+a:hover {
+  text-decoration: none !important;
+}
+
 .dino-img {
   border-radius: 2%;
   display: block;
