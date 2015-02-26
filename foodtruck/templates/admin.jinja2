@@ -65,7 +65,7 @@
     <ul class="tructionary">
     {% for truck in trucks %}
       <li><a href="/admin/edit/{{ truck.id }}">
-      <small>ID: {{ truck.id }}</small> | Name: {{ truck.name }} | <small>Cuisine: {{ truck.cuisine }}</small>
+      {{ truck.name }} <small>{{ truck.cuisine }}</small>
       </a></li>
     {% endfor %}
     </ul>

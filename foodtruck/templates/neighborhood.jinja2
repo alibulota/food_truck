@@ -45,7 +45,7 @@
         <h2>Monday</h2>
         {% for place in neighborhood if place.day == 'Monday' %}
           <a href="/tructionary/{{ place.truck_id }}">
-          <li>{{ place.truck.name }} | <small>Cuisine: {{ place.truck.cuisine }}</small></li>
+          <li>{{ place.truck.name }} <small>{{ place.truck.cuisine }}</small></li>
           </a>
         {% else %}
         <h5><em>Uh oh!</em> Our dino must have eaten these trucks... Come back later when we've added more!</h5>
@@ -54,7 +54,7 @@
         <h2>Tuesday</h2>
         {% for place in neighborhood if place.day == 'Tuesday' %}
           <a href="/tructionary/{{ place.truck_id }}">
-          <li>{{ place.truck.name }} | <small>Cuisine: {{ place.truck.cuisine }}</small></li>
+          <li>{{ place.truck.name }} <small>{{ place.truck.cuisine }}</small></li>
           </a>
         {% else %}
         <h5><em>Uh oh!</em> Our dino must have eaten these trucks... Come back later when we've added more!</h5>
@@ -63,7 +63,7 @@
         <h2>Wednesday</h2>
         {% for place in neighborhood if place.day == 'Wednesday' %}
           <a href="/tructionary/{{ place.truck_id }}">
-          <li>{{ place.truck.name }} | <small>Cuisine: {{ place.truck.cuisine }}</small></li>
+          <li>{{ place.truck.name }} <small>{{ place.truck.cuisine }}</small></li>
           </a>
         {% else %}
         <h5><em>Uh oh!</em> Our dino must have eaten these trucks... Come back later when we've added more!</h5>
@@ -72,7 +72,7 @@
         <h2>Thursday</h2>
         {% for place in neighborhood if place.day == 'Thursday' %}
           <a href="/tructionary/{{ place.truck_id }}">
-          <li>{{ place.truck.name }} | <small>Cuisine: {{ place.truck.cuisine }}</small></li>
+          <li>{{ place.truck.name }} <small>{{ place.truck.cuisine }}</small></li>
           </a>
         {% else %}
         <h5><em>Uh oh!</em> Our dino must have eaten these trucks... Come back later when we've added more!</h5>
@@ -81,7 +81,7 @@
         <h2>Friday</h2>
         {% for place in neighborhood if place.day == 'Friday' %}
           <a href="/tructionary/{{ place.truck_id }}">
-          <li>{{ place.truck.name }} | <small>Cuisine: {{ place.truck.cuisine }}</small></li>
+          <li>{{ place.truck.name }} <small>{{ place.truck.cuisine }}</small></li>
           </a>
         {% else %}
         <h5><em>Uh oh!</em> Our dino must have eaten these trucks... Come back later when we've added more!</h5>

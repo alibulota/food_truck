@@ -43,7 +43,7 @@
         <ul class="tructionary">
         {% for truck in cuisine %}
           <a href="/tructionary/{{ truck.id }}">
-          <li><small>ID: {{ truck.id }}</small> | Name: {{ truck.name }} | <small>Cuisine: {{ truck.cuisine }}</small></li>
+          <li>{{ truck.name }} <small>{{ truck.cuisine }}</small></li>
           </a>
         {% else %}
         <p><em>Uh oh!</em> Our dino must have eaten these trucks... Come back later when we've added more!</p>
