@@ -33,20 +33,27 @@
 {% block body %}
     <div class="container theme-showcase" role="main">
     <a href="#" onclick="history.back();"><span class="glyphicon glyphicon-arrow-left"></span>  Back to trucks</a>
-      <div class="truck_detail">
-        <h1>{{ truck.name }}</h1>
-        <ul class="truck_detail">
-          <li>Cuisine: {{ truck.cuisine }}</li>
-          {% for location in truck.locations %}
-            <li>Parked: <b>{{ location.day }}</b> in <b>{{ location.neighborhood }}</b> from {{ location.start_time.strftime("%I:%M %p") }} to {{ location.end_time.strftime("%I:%M %p") }}</br>
-            <em>{{ location.address }}</em></li>
+    <div class="jumbotron">
+      <h1>Tructionary <i>noun</i></small></h1>
+      <p>a massive directory of food trucks for your eating pleasure</p>
+    </div>
+    <div class="truck_detail_header">
+      <h1>{{ truck.name }}</h1>
+      <h3><em>{{ truck.cuisine }}</em></h3>
+      <ul class="truck_detail">
+        <ul class="locations-list">
+          {% for location in truck.locations|sort(attribute="day") %}
+            <li><b>{{ location.day|upper }}</b></br>
+            <em>{{ location.address }}</em>  {{ location.start_time.strftime("%I:%M %p") }}-{{ location.end_time.strftime("%I:%M %p") }}</li>
           {% else %}
-            <p><em>No locations in database</em></p>
+            <p><em>No known locations at this time</em></p>
           {% endfor %}
-          <li>Accepted Payment: {{ truck.payment }}</li>
-          <li>Website: <a href="{{ truck.website }}">{{ truck.website }}</a></li>
         </ul>
-      </div>
+        <li>{{ truck.payment }}</li>
+        <li><a href="http://{{ truck.website }}">{{ truck.website }}</a></li>
+        <li><a href="http://{{ truck.twitter }}">{{ truck.twitter }}</a></li>
+      </ul>
+    </div>
 
     </div> <!-- /container -->
 {% endblock %}

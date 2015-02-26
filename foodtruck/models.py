@@ -39,7 +39,8 @@ class Truck(Base):
 
     @classmethod
     def by_cuisine(cls, cuisine):
-        return DBSession.query(cls).filter(cls.cuisine == cuisine).order_by(cls.name).all()
+        return DBSession.query(cls).filter(
+            cls.cuisine == cuisine).order_by(cls.name).all()
 
     @classmethod
     def add_truck(cls, request):

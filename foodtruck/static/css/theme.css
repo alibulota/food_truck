@@ -130,6 +130,11 @@ footer {
   letter-spacing: 0.1em;
   text-shadow: 3px 3px 8px #9ea1b3;
 }
+
+.truck_detail_header h3 {
+  text-align: center;
+}
+
 .truck_detail {
   text-align: left;
   list-style: none;
@@ -143,6 +148,10 @@ footer {
 
 .truck_detail li {
   margin-bottom: 6px;
+}
+
+.locations-list li {
+  list-style: none;
 }
 
 .truck_form {
