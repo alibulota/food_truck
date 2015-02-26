@@ -90,45 +90,43 @@ def get_home_page(step):
 @step('Given that I am on Home')
 def where_are_the_trucks(step):
     '''Start at home page'''
-    world.food = links(truck.home)
+    assert '<h1> Dine-O-Truck </h1>' in truck.home
 
 
 @step('When I click on the link The Trucktionary')
 def list_trucks(step):
     '''Go to trucktionary page'''
-
-    world.food = string(trucks)
+    assert '<h1> Trucktionary </h1>' in truck.trucktionary
 
 
 @step('Then I see the list of trucks')
 def show_me_the_trucks(step):
     '''Show list of trucks'''
-    world.food = trucks(links)
+    assert 'class="trucktionary"' in world.truck.trucktionary
 
 
 @steps('Given that I am on the Home')
 def home_neighborhood(step):
     '''Start at home'''
-    pass
+    assert '<h1> Dine-O-Truck </h1>' in world.truck.home
 
 
 @steps('When I click on the link Search by Neighborhood')
 def link_neighborhood(step):
     '''Go to neighborhood page'''
-    pass
+    assert 'class="dropdown open"' in world.truck.neighborhood
 
 
 @steps('Then I see the trucks in that neighborhood')
 def see_neighborhood(step):
     '''See trucks in specific neighborhood'''
-    pass
+    assert '<h2> Monday </h2>' in world.truck.neighborhood
 
 
 @steps('Given that I am on the Home')
 def home_cuisine(steps):
     '''Start at home page'''
-    pass
-
+    assert '<h1> Dine-O-Truck </h1>' in world.truck.home
 
 @steps('When I click on the link Search by Cuisine')
 def link_cuisine(steps):
