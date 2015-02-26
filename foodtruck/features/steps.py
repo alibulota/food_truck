@@ -40,5 +40,3 @@ def show_me_the_trucks(step):
     response = world.app.get('trucktionary/1')
     assert response.status_code == 200
     assert 'The Yeast Whisper' in response.body
-
-

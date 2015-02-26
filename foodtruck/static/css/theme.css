@@ -149,6 +149,7 @@ footer {
   display: block;
   float: left;
   margin-right: 3%;
+  max-width: 30%;
 }
 
 .truck_detail em {
