@@ -82,59 +82,81 @@ def add_truck(app, name, cuisine, cuisine_sort, payment, twitter, website):
 
 @step('Dino homepage')
 def get_home_page(step):
+    '''Check to see if home page works'''
     response = world.app.get('/')
     assert response.status_code == 200
 
 
 @step('Given that I am on Home')
 def where_are_the_trucks(step):
+    '''Start at home page'''
     world.food = links(truck.home)
 
 
 @step('When I click on the link The Trucktionary')
 def list_trucks(step):
+    '''Go to trucktionary page'''
 
     world.food = string(trucks)
 
 
 @step('Then I see the list of trucks')
 def show_me_the_trucks(step):
+    '''Show list of trucks'''
     world.food = trucks(links)
 
 
 @steps('Given that I am on the Home')
 def home_neighborhood(step):
+    '''Start at home'''
     pass
+
 
 @steps('When I click on the link Search by Neighborhood')
 def link_neighborhood(step):
+    '''Go to neighborhood page'''
     pass
+
 
 @steps('Then I see the trucks in that neighborhood')
 def see_neighborhood(step):
+    '''See trucks in specific neighborhood'''
     pass
+
 
 @steps('Given that I am on the Home')
 def home_cuisine(steps):
+    '''Start at home page'''
     pass
+
 
 @steps('When I click on the link Search by Cuisine')
 def link_cuisine(steps):
+    '''Go to cuisine page'''
     pass
+
 
 @steps('Then I will see trucks with that kind of food')
 def see_cuisine(steps):
+    '''List all trucks by cuisine'''
     pass
+
 
 @steps('Given that I am on The Trucktionary')
 def home_trucktionary(steps):
+    '''Show page with all trucks listed'''
     pass
+
 
 @steps('When I click on the link The Yeast Whisper')
 def link_trucktionary(steps):
+    '''Show information with THe Yeast Whisperer Truck'''
     pass
+
 
 @steps('Then I will see that trucks info')
 def see_trucktionary(steps):
+    '''Show truck info'''
     pass
+
 
