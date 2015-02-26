@@ -30,7 +30,7 @@ neighborhood_dict = {
 
 @view_config(route_name='home', renderer='templates/index.jinja2')
 def index(request):
-    return
+    return {'trucks': 'trucks'}
 
 
 @view_config(route_name='trucks', renderer='templates/tructionary.jinja2')
