@@ -19,22 +19,56 @@ def make_entry(step):
     return response
 
 
-@step('Journal homepage')
-def get_home_page(step):
-    response = world.app.get('/')
-    assert response.status_code == 200
+@world.absorb
+def login_helper(username, password, app):
+    login_data = {'username': admin, 'password': secret}
+    return app.post('/login', params=login_data, status='*')
 
 
-@step('I know where I am and I want to know where the food is coming from')
-def where_are_the_trucks(step):
-    word.food = links(truck.trucktionary)
+@world.absorb
+def init_db(scenerio):
+    with closing(connect_db(settings)) as bd:
+        db.curser().execute(world.DB_SCHEMA)
+        db.commit()
 
 
-@step('I want a certain kind o food')
-def what_kind_of_genres(step):
-    world.food = string(trucks)
+@world.absorb
+def run_query(scenerio):
+    cursor = db.cursor()
+    cursor.execute(query, params)
+    db.commit()
+    results = None
+    if get_results:
+        results = cursor.fetchall()
+    return results
 
 
-@step('I want to contact the food truck')
-def show_me_the_trucks(step):
-    world.food = trucks(links)
+@world.absorb
+def clear_db(scenario):
+    with closing(connect_db(settings)) as db:
+        db.cursor().execute("DROP TABLE entries")
+        db.commit()
+
+
+@world.absorb
+def j
+
+# @step('Dino homepage')
+# def get_home_page(step):
+#     response = world.app.get('/')
+#     assert response.status_code == 200
+
+
+# @step('I want to know where the food is coming from')
+# def where_are_the_trucks(step):
+#     word.food = links(truck.trucktionary)
+
+
+# @step('I want a certain kind of food')
+# def what_kind_of_genres(step):
+#     world.food = string(trucks)
+
+
+# @step('I want to contact the food truck')
+# def show_me_the_trucks(step):
+#     world.food = trucks(links)
