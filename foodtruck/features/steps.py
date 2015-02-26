@@ -1,4 +1,7 @@
 from lettuce import *
+from templates import *
+import os
+from contextlib import closing
 
 
 TEST_DSN = 'dbname=test_food_truck user=jakeanderson'
