@@ -1,9 +1,7 @@
 Feature: Gimme a truck
     I would like to demostrate
     How easy it is to find food trucks
-    Near me by searching for locations, cuisine, or just seeing the truck listings  
-
-    Background: I am on the Dine-o-Truck website
+    Near me by searching for locations, cuisine, or just seeing the truck listings
 
     Senerio: Look at trucks
         Given that I am on Home
