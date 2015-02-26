@@ -33,8 +33,8 @@ def main(argv=sys.argv):
     options = parse_vars(argv[2:])
     setup_logging(config_uri)
     settings = get_appsettings(config_uri, options=options)
-    settings['sqlalchemy.url'] = os.environ.get(
-        'DATABASE_URL', 'postgresql://jwarren:@localhost:5432/food_truck')
+    # settings['sqlalchemy.url'] = os.environ.get(
+    #     'DATABASE_URL', 'postgresql://jwarren:@localhost:5432/food_truck')
     engine = engine_from_config(settings, 'sqlalchemy.')
     DBSession.configure(bind=engine)
     Base.metadata.create_all(engine)
