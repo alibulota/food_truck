@@ -43,6 +43,10 @@
         <input type="text" name="cuisine" id="cuisine"/>
       </div>
       <div>
+        <label for="cuisine_sort">Sort cuisine</label>
+        <input type="text" name="cuisine_sort" id="cuisine_sort"/>
+      </div>
+      <div>
         <label for="payment">Payment</label>
         <input type="text" name="payment" id="payment"/>
       </div>
@@ -65,7 +69,7 @@
     <ul class="tructionary">
     {% for truck in trucks %}
       <li><a href="/admin/edit/{{ truck.id }}">
-      {{ truck.name }} <small>{{ truck.cuisine }}</small>
+      {{ truck.name }} <small>| <i>{{ truck.cuisine }}</i></small>
       </a></li>
     {% endfor %}
     </ul>

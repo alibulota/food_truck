@@ -28,6 +28,7 @@ class Truck(Base):
     payment = Column(Text)
     twitter = Column(Text)
     website = Column(Text)
+    cuisine_sort = Column(Text)
 
     @classmethod
     def all(cls):
@@ -38,9 +39,9 @@ class Truck(Base):
         return DBSession.query(cls).filter(cls.id == id).one()
 
     @classmethod
-    def by_cuisine(cls, cuisine):
+    def by_cuisine(cls, cuisine_sort):
         return DBSession.query(cls).filter(
-            cls.cuisine == cuisine).order_by(cls.name).all()
+            cls.cuisine_sort == cuisine_sort).order_by(cls.name).all()
 
     @classmethod
     def add_truck(cls, request):
@@ -49,8 +50,10 @@ class Truck(Base):
         payment = request.params.get('payment', None)
         twitter = request.params.get('twitter', None)
         website = request.params.get('website', None)
+        cuisine_sort = request.params.get('cuisine_sort', None)
         new_entry = cls(name=name, cuisine=cuisine, payment=payment,
-                        twitter=twitter, website=website)
+                        twitter=twitter, website=website,
+                        cuisine_sort=cuisine_sort)
         DBSession.add(new_entry)
 
     @classmethod
@@ -61,12 +64,14 @@ class Truck(Base):
         payment = request.params.get('payment', None)
         twitter = request.params.get('twitter', None)
         website = request.params.get('website', None)
+        cuisine_sort = request.params.get('cuisine_sort', None)
         DBSession.query(cls).filter(cls.id == id).update({
             "name": name,
             "cuisine": cuisine,
             "payment": payment,
             "twitter": twitter,
-            "website": website
+            "website": website,
+            "cuisine_sort": cuisine_sort
             })
 
 
