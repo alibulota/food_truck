@@ -1,31 +1,26 @@
 Feature: Gimme a truck
     I would like to demostrate
     How easy it is to find food trucks
-    Near me by searching for locations, cuisine, or truck listings  
+    Near me by searching for locations, cuisine, or just seeing the truck listings  
 
-    Background: I am on the Dine-o-truck website
+    Background: I am on the Dine-o-Truck website
 
     Senerio: Look at trucks
-        Given I am on the home page
-        When I click on the Tdructionary 
+        Given that I am on Home
+        When I click on the link The Trucktionary 
         Then I see the list of trucks
 
     Senerio: Check out the neighborhood
-        Given I am on the home page
-        When I click on a neighborhood
+        Given that I am on the Home
+        When I click on the link Search by Neighborhood
         Then I see the trucks in that neighborhood
 
     Senerio: Find food genres
-        Given I am on the home page
-        When I click on a food genre
+        Given that I am on the Home
+        When I click on the link Search by Cuisine
         Then I will see trucks with that kind of food
 
     Senerio: See specific food trucks
-        Given I am on the truck page
-        When I click on a food truck
+        Given that I am on The Trucktionary
+        When I click on the link The Yeast Whisper
         Then I will see that trucks info
-
-    Senerio: Get directions
-        Given I am looking at a truck
-        When I click on an address
-        Then I will be directed to google maps
