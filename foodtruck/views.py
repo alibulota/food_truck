@@ -30,11 +30,7 @@ neighborhood_dict = {
 
 @view_config(route_name='home', renderer='templates/index.jinja2')
 def index(request):
-    try:
-        trucks = Truck.all()
-    except DBAPIError:
-        return Response(conn_err_msg, content_type='text/plain', status_int=500)
-    return {'trucks': trucks}
+    return
 
 
 @view_config(route_name='trucks', renderer='templates/tructionary.jinja2')
