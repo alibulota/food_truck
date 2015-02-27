@@ -66,12 +66,14 @@ def main(global_config, **settings):
 
 
 def googlemapify(address):
+    """turns generic address into Google Map compatible slug"""
     slug = address.replace(' ', '+')
     google = "http://www.google.com/maps/place/{}".format(slug)
     return "<a href='{}' target='_blank'>{}</a>".format(google, address)
 
 
 def sortbyday(location_object):
+    """sorts truck locations by day of the week"""
     return sorted(location_object, key=lambda x: {
         'Monday': 1,
         'Tuesday': 2,

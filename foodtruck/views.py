@@ -10,7 +10,7 @@ from .models import (
     Truck,
     Locations)
 
-
+# used in converting match dict cuisine to proper format
 cuisine_dict = {
     'american': 'American',
     'asian': 'Asian',
@@ -21,6 +21,7 @@ cuisine_dict = {
     'sweets': 'Sweets'
 }
 
+# used in converting match dict neighborhood to proper format
 neighborhood_dict = {
     'slu': 'South Lake Union',
     'ballard': 'Ballard',

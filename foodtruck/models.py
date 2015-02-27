@@ -32,19 +32,23 @@ class Truck(Base):
 
     @classmethod
     def all(cls):
+        """returns all trucks in the database"""
         return DBSession.query(cls).order_by(cls.name).all()
 
     @classmethod
     def by_id(cls, id):
+        """returns a single truck entry from database"""
         return DBSession.query(cls).filter(cls.id == id).one()
 
     @classmethod
     def by_cuisine(cls, cuisine_sort):
+        """returns list of all trucks serving input cuisine"""
         return DBSession.query(cls).filter(
             cls.cuisine_sort == cuisine_sort).order_by(cls.name).all()
 
     @classmethod
     def add_truck(cls, request):
+        """add new truck to database"""
         name = request.params.get('name', None)
         cuisine = request.params.get('cuisine', None)
         payment = request.params.get('payment', None)
@@ -58,6 +62,7 @@ class Truck(Base):
 
     @classmethod
     def edit_truck(cls, request):
+        """edit existing truck in database"""
         id = request.matchdict.get('id', None)
         name = request.params.get('name', None)
         cuisine = request.params.get('cuisine', None)
@@ -76,6 +81,7 @@ class Truck(Base):
 
     @classmethod
     def del_truck(cls, request):
+        """delete existing truck in database"""
         id = request.matchdict.get('id', None)
         removed_truck = DBSession.query(cls).filter(cls.id == id).one()
         DBSession.delete(removed_truck)
@@ -99,6 +105,7 @@ class Locations(Base):
 
     @classmethod
     def add_location(cls, request):
+        """add location details linked to a truck"""
         truck_id = request.matchdict.get('id', None)
         day = request.params.get('day', None)
         start_time = request.params.get('start_time', None)
@@ -112,12 +119,14 @@ class Locations(Base):
 
     @classmethod
     def del_location(cls, request):
+        """delete a location attached to a truck"""
         id = request.matchdict.get('id', None)
         old_location = DBSession.query(cls).filter(cls.id == id).one()
         DBSession.delete(old_location)
 
     @classmethod
     def by_neighborhood(cls, neighborhood):
+        """returns all results in a given neighborhood"""
         return DBSession.query(cls).filter(
             cls.neighborhood == neighborhood).order_by(cls.day).all()
 
