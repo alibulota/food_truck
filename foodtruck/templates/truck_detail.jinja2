@@ -44,7 +44,7 @@
         <ul class="locations-list">
           {% for location in truck.locations|sort(attribute="day") %}
             <li><b>{{ location.day|upper }}</b></br>
-            <a href="{{ location.address|googlemapify }}" target="_blank"><em>{{ location.address }}</em></a></br>
+            <em>{{ location.address|googlemapify|safe }}</em></br>
             {{ location.start_time.strftime("%-I:%M %p") }}-{{ location.end_time.strftime("%-I:%M %p") }}</li>
           {% else %}
             <p><em>No known locations at this time</em></p>
