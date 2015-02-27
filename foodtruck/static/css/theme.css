@@ -115,9 +115,10 @@ footer {
 
 .index_post {
   float:left;
-  width: 60%;
+  width: 50%;
   color: #000;
   opacity: 0.6;
+  padding-left: 10%;
 }
 
 .tructionary {
@@ -127,6 +128,23 @@ footer {
 
 .tructionary li {
   padding: 6px;
+}
+
+.tructionary-table {
+  margin: 0 auto;
+  min-width: 80%;
+  font-size: 150%
+}
+
+.truck-cell-left {
+  text-align: right;
+  padding-right: 8px;
+  min-width: 50%;
+}
+
+.truck-cell-right {
+  text-align: left;
+  min-width: 50%
 }
 
 .truck_detail_header h1 {
@@ -176,7 +194,7 @@ footer {
 
 .twitter_widget {
   float: right;
-  width: 35%;
+  width: 45%;
   padding-top: 5%;
 }
 
