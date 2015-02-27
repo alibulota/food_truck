@@ -1,0 +1,116 @@
+{% extends "base.jinja2" %}
+
+{% block nav %}
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/tructionary">The Tructionary</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Search by Neighborhood <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/neighborhood/slu">SLU</a></li>
+                <li><a href="/neighborhood/downtown">Downtown</a></li>
+                <li><a href="/neighborhood/ballard">Ballard</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Search by Cuisine <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/cuisine/american">American</a></li>
+                <li><a href="/cuisine/asian">Asian</a></li>
+                <li><a href="/cuisine/bbq">BBQ</a></li>
+                <li><a href="/cuisine/intl">International</a></li>
+                <li><a href="/cuisine/medi">Mediterranean</a></li>
+                <li><a href="/cuisine/mex">Mexican</a></li>
+                <li><a href="/cuisine/sweets">Sweets</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+{% endblock %}
+
+
+{% block body %}
+  <div class="container">
+    <a href="/admin"><span class="glyphicon glyphicon-arrow-left"></span>  Back to dashboard</a>
+    
+    <div class="form_container">
+    <div class="truck_form">
+      <h2>Edit Truck: {{ truck.name }}</h2>
+      <form action="{{ request.route_url('edit', id=truck.id) }}" method="POST">
+        <div>
+          <label for="name">Truck Name</label>
+          <input type="text" name="name" id="name" value="{{truck.name}}"/>
+        </div>
+        <div>
+          <label for="cuisine">Cuisine</label>
+          <input type="text" name="cuisine" id="cuisine" value="{{truck.cuisine}}"/>
+        </div>
+        <div>
+          <label for="payment">Payment</label>
+          <input type="text" name="payment" id="payment" value="{{truck.payment}}"/>
+        </div>
+        <div>
+          <label for="twitter">Twitter address</label>
+          <input type="text" name="twitter" id="twitter" value="{{truck.twitter}}"/>
+        </div>
+        <div>
+          <label for="website">Web address</label>
+          <input type="text" name="website" id="website" value="{{truck.website}}"/>
+        </div>
+        <div>
+          <input type="submit" name="add" value="Update It!"/>
+        </div>
+      </form>
+      </br>
+    </div><!-- truck_form -->
+
+    <div class="truck_form">
+      <h3>Add Location</h3>
+      <form action="{{ request.route_url('add_location', id=truck.id) }}" method="POST">
+        <div>
+          <label for="day">Day</label>
+          <input type="text" name="day" id="day"/>
+        </div>
+        <div>
+          <label for="start_time">Start Time</label>
+          <input type="text" name="start_time" id="start_time"/>
+        </div>
+        <div>
+          <label for="end_time">End Time</label>
+          <input type="text" name="end_time" id="end_time"/>
+        </div>
+        <div>
+          <label for="address">Address</label>
+          <input type="text" name="address" id="address"/>
+        </div>
+        <div>
+          <label for="neighborhood">Neighborhood</label>
+          <input type="text" name="neighborhood" id="neighborhood"/>
+        </div>
+        <div>
+          <input type="submit" name="add" value="Time It!"/>
+        </div>
+      </form>
+    </div><!-- truck_form -->
+
+    <div class="truck_form">
+      <h4>Neighborhoods for {{ truck.name }}:</h4>
+      <ul>
+      {% for location in truck.locations %}
+        <li>
+        {{ location.day }} in {{ location.neighborhood }}</br>
+        {{ location.start_time.strftime("%I:%M %p") }}-{{ location.end_time.strftime("%I:%M %p") }}</br>
+        {{ location.address }}
+        <form action="{{ request.route_url('del_location', id=location.id) }}" method="POST">
+        <input type="submit" name="add" value="Delete"/></form>
+        </li>
+      {% else %}
+        <p><em>No locations in database</em></p>
+      {% endfor %}
+      </ul>
+    </div><!-- truck_form -->
+  </div><!-- form_container -->
+
+</div><!-- container -->
+{% endblock %}

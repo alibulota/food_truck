@@ -32,20 +32,21 @@
 
 {% block body %}
     <div class="container theme-showcase" role="main">
-      <div class="jumbotron">
-        <h1>Tructionary <i>noun</i></h1>
-        <p>a massive directory of food trucks for your eating pleasure</p>
-<!--         <img class="dino-img" src="../static/img/dinotruck.png" alt="the dine-o-truck dino!" align="center"> -->
-      </div>
-      <div class="page-header">
-        <h1>The Trucks</h1>
-        <ul class="tructionary">
-        {% for truck in trucks %}
-          <a href="/tructionary/{{ truck.id }}">
-          <li><small>ID: {{ truck.id }}</small> | Name: {{ truck.name }} | <small>Cuisine: {{ truck.cuisine }}</small></li>
-          </a>
-        {% endfor %}
+    <a href="#" onclick="history.back();"><span class="glyphicon glyphicon-arrow-left"></span>  Back to trucks</a>
+      <div class="truck_detail">
+        <h1>{{ truck.name }}</h1>
+        <ul class="truck_detail">
+          <li>Cuisine: {{ truck.cuisine }}</li>
+          {% for location in truck.locations %}
+            <li>Parked: <b>{{ location.day }}</b> in <b>{{ location.neighborhood }}</b> from {{ location.start_time.strftime("%I:%M %p") }} to {{ location.end_time.strftime("%I:%M %p") }}</br>
+            <em>{{ location.address }}</em></li>
+          {% else %}
+            <p><em>No locations in database</em></p>
+          {% endfor %}
+          <li>Accepted Payment: {{ truck.payment }}</li>
+          <li>Website: <a href="{{ truck.website }}">{{ truck.website }}</a></li>
         </ul>
       </div>
+
     </div> <!-- /container -->
 {% endblock %}

@@ -8,6 +8,7 @@ TEST_DSN = 'dbname=test_food_truck user=jakeanderson'
 settings = {'db': TEST_DSN}
 INPUT_BTN = '<input type="submit" name="add" value="Truck It!"/>'
 
+
 DB_SCHEMA = """
 CREATE A TABLE IF NOT EXISTS trucks (
     id SERIAL PRIMARY KEY,
@@ -25,8 +26,9 @@ CREATE A TABLE IF NOT EXISTS trucks (
 def make_entry(step):
     entry_data = {'name': 'The Yeast Whisper',
                   'location': 'the corner of pine and 3rd',
-                  'cuisine': 'American'
+                  'cuisine': 'American',
                   'cuisine_sort': 'Burgers',
+                  'food_type': 'American',
                   'payment': 'Cash',
                   'twitter': 'www.twitter.com/theyeastwhisperer',
                   'website': 'www.theyeastwhisperer.com'}
@@ -66,28 +68,11 @@ def clear_db(scenario):
         db.commit()
 
 
-@world.absorb
-def add_truck(app, name, cuisine, cuisine_sort, payment, twitter, website):
-    '''Create an entry in the database'''
-    expected = (name, cuisine, cuisine_sort, payment, twitter, website)
-    with closing(connect_db(settings)) as db:
-
-# con_string =  "dbname='food_truck' user='aabulota'"
-
-# con = psycopg2.connect(con_string)
-# cursor = con.cursor()
-
-# try:
-#     con = psycopg2.connect(con_string)
-#     cur = con.cursor()
-#     cur.execute("DROP TABLE IF EXISTS trucks")
-
-
-@step('Dino homepage')
-def get_home_page(step):
-    '''Check to see if home page works'''
-    response = world.app.get('/')
-    assert response.status_code == 200
+# @world.absorb
+# def add_truck(app, name, cuisine, cuisine_sort, payment, twitter, website):
+#     '''Create an entry in the database'''
+#     expected = (name, cuisine, cuisine_sort, payment, twitter, website)
+#     with closing(connect_db(settings)) as db:
 
 
 @step('Given that I am on Home')
@@ -131,6 +116,7 @@ def home_cuisine(steps):
     '''Start at home page'''
     assert '<h1> Dine-O-Truck </h1>' in world.truck.home
 
+
 @steps('When I click on the link Search by Cuisine')
 def link_cuisine(steps):
     '''Go to cuisine page'''
@@ -159,5 +145,3 @@ def link_trucktionary(steps):
 def see_trucktionary(steps):
     '''Show truck info'''
     assert 'class="truck_detail"' in world.truck.trucktionary/1
-
-

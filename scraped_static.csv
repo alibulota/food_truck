@@ -1,4 +1,4 @@
-number,trucks,website,food_type,payment,twitter
+number,name,website,cuisine,payment,twitter
 3,Falafel Salam,http://www.seattlefoodtruck.com/index.php/trucks/falafel-salam/,Middle Eastern,Unknown,https://twitter.com/FalafelSalam
 4,BUNS,http://www.seattlefoodtruck.com/index.php/trucks/buns/,Burgers,Cash or Cards,https://twitter.com/BunsOnWheels
 5,Napkin Friends,http://www.seattlefoodtruck.com/index.php/trucks/napkin-friends/,Jewish,Cash or Cards,http://www.twitter.com/napkinfriends
