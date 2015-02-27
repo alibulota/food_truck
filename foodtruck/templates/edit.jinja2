@@ -161,10 +161,12 @@
         {{ location.start_time.strftime("%-I:%M %p") }}-{{ location.end_time.strftime("%-I:%M %p") }}</br>
         {{ location.address }}
         <form action="{{ request.route_url('del_location', id=location.id) }}" method="POST">
-        <input type="submit" name="add" value="Delete"/></form>
+        <input type="submit" name="del_location" value="Delete"/></form>
         </li>
       {% else %}
         <p><em>No locations in database</em></p>
+        <form action="{{ request.route_url('del_truck', id=truck.id) }}" method="POST">
+        <input type="submit" name="del_truck" value=" !DELETE TRUCK! "/></form>
       {% endfor %}
       </ul>
     </div><!-- truck_form -->

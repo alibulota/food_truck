@@ -74,6 +74,12 @@ class Truck(Base):
             "cuisine_sort": cuisine_sort
             })
 
+    @classmethod
+    def del_truck(cls, request):
+        id = request.matchdict.get('id', None)
+        removed_truck = DBSession.query(cls).filter(cls.id == id).one()
+        DBSession.delete(removed_truck)
+
 
 class Locations(Base):
     __tablename__ = 'locations'

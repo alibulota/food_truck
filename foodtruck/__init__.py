@@ -16,8 +16,8 @@ def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
     """
     jinja2.filters.FILTERS['googlemapify'] = googlemapify
-    settings['sqlalchemy.url'] = os.environ.get(
-        'DATABASE_URL', 'postgresql://jwarren:@localhost:5432/food_truck')
+    # settings['sqlalchemy.url'] = os.environ.get(
+    #     'DATABASE_URL', 'postgresql://jwarren:@localhost:5432/food_truck')
 
     manager = BCRYPTPasswordManager()
     settings['auth.username'] = os.environ.get('AUTH_USERNAME', 'admin')
@@ -59,6 +59,7 @@ def main(global_config, **settings):
     config.add_route('edit', 'admin/edit/{id:\d+}')
     config.add_route('add_location', 'admin/add_location/{id:\d+}')
     config.add_route('del_location', 'admin/del_location/{id:\d+}')
+    config.add_route('del_truck', 'admin/del_truck/{id:\d+}')
     config.scan()
     return config.make_wsgi_app()
 

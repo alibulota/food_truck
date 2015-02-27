@@ -124,6 +124,18 @@ def add_truck(request):
         return HTTPForbidden()
 
 
+@view_config(route_name='del_truck', request_method='POST')
+def del_truck(request):
+    if request.authenticated_userid:
+        try:
+            Truck.del_truck(request)
+            return HTTPFound(request.route_url('admin'))
+        except DBAPIError:
+            return HTTPInternalServerError
+    else:
+        return HTTPForbidden()
+
+
 @view_config(route_name='add_location', request_method='POST')
 def add_location(request):
     if request.authenticated_userid:
