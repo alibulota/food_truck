@@ -129,7 +129,8 @@ def add_location(request):
     if request.authenticated_userid:
         try:
             Locations.add_location(request)
-            return HTTPFound(request.route_url('admin'))
+            id = request.matchdict.get('id', None)
+            return HTTPFound('/admin/edit/{}'.format(id))
         except DBAPIError:
             return HTTPInternalServerError
     else:
