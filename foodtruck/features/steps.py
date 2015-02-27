@@ -1,5 +1,6 @@
 from lettuce import *
-from templates import *
+from .. views import *
+from .. models import *
 import os
 from contextlib import closing
 
