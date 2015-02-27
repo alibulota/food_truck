@@ -9,12 +9,12 @@ Feature: Gimme a truck
         Then I see the list of trucks
 
     Senerio: Check out the neighborhood
-        Given that I am on the Home
+        Given that I am on Home
         When I click on the link Search by Neighborhood
         Then I see the trucks in that neighborhood
 
     Senerio: Find food genres
-        Given that I am on the Home
+        Given that I am on Home
         When I click on the link Search by Cuisine
         Then I will see trucks with that kind of food
 
