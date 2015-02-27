@@ -1,6 +1,15 @@
-from lettuce import *
-from .. views import *
-from .. models import *
+import lettuce
+# import pdb; pdb.set_trace()
+from foodtruck.views import (
+    index,
+    tructionary,
+    truck_detail,
+    neighborhood,
+    cuisine,
+    login,
+    do_login
+)
+from foodtruck.models import (Truck, Locations)
 import os
 from contextlib import closing
 
@@ -23,7 +32,7 @@ CREATE A TABLE IF NOT EXISTS trucks (
 """
 
 
-@world.absorb
+@lettuce.world.absorb
 def make_entry(step):
     entry_data = {'name': 'The Yeast Whisper',
                   'location': 'the corner of pine and 3rd',
@@ -38,20 +47,20 @@ def make_entry(step):
     return response
 
 
-@world.absorb
+@lettuce.world.absorb
 def login_helper(username, password, app):
     login_data = {'username': admin, 'password': secret}
     return app.post('/login', params=login_data, status='*')
 
 
-@before.each_scenario
+@lettuce.before.each_scenario
 def init_db(scenerio):
     with closing(connect_db(settings)) as db:
         db.curser().execute(world.DB_SCHEMA)
         db.commit()
 
 
-@world.absorb
+@lettuce.world.absorb
 def run_query(scenerio):
     cursor = db.cursor()
     cursor.execute(query, params)
@@ -62,7 +71,7 @@ def run_query(scenerio):
     return results
 
 
-@after.each_scenario
+@lettuce.after.each_scenario
 def clear_db(scenario):
     with closing(connect_db(settings)) as db:
         db.cursor().execute("DROP TABLE entries")
@@ -76,73 +85,73 @@ def clear_db(scenario):
 #     with closing(connect_db(settings)) as db:
 
 
-@step('Given that I am on Home')
+@lettuce.step('Given that I am on Home')
 def where_are_the_trucks(step):
     '''Start at home page'''
     assert '<h1> Dine-O-Truck </h1>' in truck.home
 
 
-@step('When I click on the link The Trucktionary')
+@lettuce.step('When I click on the link The Trucktionary')
 def list_trucks(step):
     '''Go to trucktionary page'''
     assert '<h1> Trucktionary </h1>' in truck.trucktionary
 
 
-@step('Then I see the list of trucks')
+@lettuce.step('Then I see the list of trucks')
 def show_me_the_trucks(step):
     '''Show list of trucks'''
     assert 'class="trucktionary"' in world.truck.trucktionary
 
 
-@steps('Given that I am on the Home')
+@lettuce.step('Given that I am on the Home')
 def home_neighborhood(step):
     '''Start at home'''
     assert '<h1> Dine-O-Truck </h1>' in world.truck.home
 
 
-@steps('When I click on the link Search by Neighborhood')
+@lettuce.step('When I click on the link Search by Neighborhood')
 def link_neighborhood(step):
     '''Go to neighborhood page'''
     assert 'class="dropdown open"' in world.truck.home
 
 
-@steps('Then I see the trucks in that neighborhood')
+@lettuce.step('Then I see the trucks in that neighborhood')
 def see_neighborhood(step):
     '''See trucks in specific neighborhood'''
     assert '<h2> Monday </h2>' in world.truck.neighborhood
 
 
-@steps('Given that I am on the Home')
+@lettuce.step('Given that I am on the Home')
 def home_cuisine(steps):
     '''Start at home page'''
     assert '<h1> Dine-O-Truck </h1>' in world.truck.home
 
 
-@steps('When I click on the link Search by Cuisine')
+@lettuce.step('When I click on the link Search by Cuisine')
 def link_cuisine(steps):
     '''Go to cuisine page'''
     assert 'class="dropdown open"' in world.truck.home
 
 
-@steps('Then I will see trucks with that kind of food')
+@lettuce.step('Then I will see trucks with that kind of food')
 def see_cuisine(steps):
     '''List all trucks by cuisine'''
     assert '<h1> American </h1>' in world.truck.cuisine
 
 
-@steps('Given that I am on The Trucktionary')
+@lettuce.step('Given that I am on The Trucktionary')
 def home_trucktionary(steps):
     '''Show page with all trucks listed'''
     assert '<h1> Tructionary </h1>' in world.truck.trucktionary
 
 
-@steps('When I click on the link The Yeast Whisper')
+@lettuce.step('When I click on the link The Yeast Whisper')
 def link_trucktionary(steps):
     '''Show information with THe Yeast Whisper Truck'''
-    assert '<h1> The Yeast Whisper </h1>' in world.truck.trucktionary/1
+    assert '<h1> The Yeast Whisper </h1>' in world.truck.trucktionary
 
 
-@steps('Then I will see that trucks info')
+@lettuce.step('Then I will see that trucks info')
 def see_trucktionary(steps):
     '''Show truck info'''
-    assert 'class="truck_detail"' in world.truck.trucktionary/1
+    assert 'class="truck_detail"' in world.truck.trucktionary
