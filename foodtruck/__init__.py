@@ -16,6 +16,7 @@ def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
     """
     jinja2.filters.FILTERS['googlemapify'] = googlemapify
+    jinja2.filters.FILTERS['sortbyday'] = sortbyday
     settings['sqlalchemy.url'] = os.environ.get(
         'DATABASE_URL', 'postgresql://jwarren:@localhost:5432/food_truck')
 
@@ -68,3 +69,13 @@ def googlemapify(address):
     slug = address.replace(' ', '+')
     google = "http://www.google.com/maps/place/{}".format(slug)
     return "<a href='{}' target='_blank'>{}</a>".format(google, address)
+
+
+def sortbyday(location_object):
+    return sorted(location_object, key=lambda x: {
+        'Monday': 1,
+        'Tuesday': 2,
+        'Wednesday': 3,
+        'Thursday': 4,
+        'Friday': 5
+    }[x.day])

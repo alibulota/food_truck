@@ -42,7 +42,7 @@
       <h3><em>{{ truck.cuisine }}</em></h3>
       <ul class="truck_detail">
         <ul class="locations-list">
-          {% for location in truck.locations|sort(attribute="day") %}
+          {% for location in truck.locations|sortbyday %}
             <li><b>{{ location.day|upper }}</b></br>
             <em>{{ location.address|googlemapify|safe }}</em></br>
             {{ location.start_time.strftime("%-I:%M %p") }}-{{ location.end_time.strftime("%-I:%M %p") }}</li>
