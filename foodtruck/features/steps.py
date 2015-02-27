@@ -103,7 +103,7 @@ def show_me_the_trucks(step):
     assert 'class="trucktionary"' in world.truck.trucktionary
 
 
-@lettuce.step('Given that I am on the Home')
+@lettuce.step('Given that I am on Home')
 def home_neighborhood(step):
     '''Start at home'''
     assert '<h1> Dine-O-Truck </h1>' in world.truck.home
@@ -121,37 +121,37 @@ def see_neighborhood(step):
     assert '<h2> Monday </h2>' in world.truck.neighborhood
 
 
-@lettuce.step('Given that I am on the Home')
-def home_cuisine(steps):
+@lettuce.step('Given that I am on Home')
+def home_cuisine(step):
     '''Start at home page'''
     assert '<h1> Dine-O-Truck </h1>' in world.truck.home
 
 
 @lettuce.step('When I click on the link Search by Cuisine')
-def link_cuisine(steps):
+def link_cuisine(step):
     '''Go to cuisine page'''
     assert 'class="dropdown open"' in world.truck.home
 
 
 @lettuce.step('Then I will see trucks with that kind of food')
-def see_cuisine(steps):
+def see_cuisine(step):
     '''List all trucks by cuisine'''
     assert '<h1> American </h1>' in world.truck.cuisine
 
 
 @lettuce.step('Given that I am on The Trucktionary')
-def home_trucktionary(steps):
+def home_trucktionary(step):
     '''Show page with all trucks listed'''
     assert '<h1> Tructionary </h1>' in world.truck.trucktionary
 
 
 @lettuce.step('When I click on the link The Yeast Whisper')
-def link_trucktionary(steps):
+def link_trucktionary(step):
     '''Show information with THe Yeast Whisper Truck'''
     assert '<h1> The Yeast Whisper </h1>' in world.truck.trucktionary
 
 
 @lettuce.step('Then I will see that trucks info')
-def see_trucktionary(steps):
+def see_trucktionary(step):
     '''Show truck info'''
     assert 'class="truck_detail"' in world.truck.trucktionary
